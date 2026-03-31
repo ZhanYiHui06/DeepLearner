@@ -1,46 +1,56 @@
-# Astro Starter Kit: Basics
+# DeepLearner Club Website 🚀
 
-```sh
-npm create astro@latest -- --template basics
-```
+Technical Neo-Brutalism inspired website for the **DeepLearner** Artificial Intelligence learning community at Nantong University.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## ✨ Features
 
-## 🚀 Project Structure
+- **Technical Neo-Brutalism Aesthetic**: High-contrast, grid-based layout with sharp borders and MiSans typography.
+- **Dynamic Content**: GSAP-powered statistics counter and smooth scroll-triggered animations.
+- **Activity System**: Multi-level navigation for club activities and past session archives.
+- **Modern Performance**: Built with **Astro 6** and **Tailwind CSS 4** for lightning-fast delivery and zero-JS when possible.
+- **SPA Experience**: Enabled with Astro's `ClientRouter` for instantaneous page transitions.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠️ Technology Stack
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+- **Framework**: [Astro](https://astro.build/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [GSAP](https://gsap.com/) (ScrollTrigger, TextPlugin)
+- **Icons**: Lucide (SVG)
+- **Hosting**: Recommended for [Cloudflare Pages](https://pages.cloudflare.com/)
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🚀 Getting Started
 
-## 🧞 Commands
+### Prerequisites
 
-All commands are run from the root of the project, from a terminal:
+- Node.js (v22.12.0 or later)
+- npm
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### Local Development
 
-## 👀 Want to learn more?
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+2. **Start development server**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Build for production**:
+   ```bash
+   npm run build
+   ```
+
+## 📂 Project Structure
+
+- `src/components/`: Modular UI components (Navbar, Footer, Activity cards, etc.)
+- `src/pages/`: Routing logic, including dynamic activity routes.
+- `src/content/`: Activity detail content in Markdown.
+- `src/data/`: Structured JSON data for the team, activities, and archives.
+- `public/`: Static assets such as optimized images and local web fonts.
+
+## 📄 License
+
+© 2026 DEEPLEARNER · ALL RIGHTS RESERVED.
+南通大学人工智能与计算机学院 指导
