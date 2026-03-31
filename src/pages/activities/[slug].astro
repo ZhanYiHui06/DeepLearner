@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import activitiesData from '../../data/activities.json';
+
+// Generate static paths from JSON data
+export function getStaticPaths() {
+  return activitiesData.map(activity => ({
+    params: { slug: activity.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+
+// Find activity metadata from JSON
+const activity = activitiesData.find(a => a.slug === slug);
+if (!activity) return Astro.redirect('/');
+
+// Load and render the Markdown content
+const mdFiles = import.meta.glob('../../content/activities/*.md', { eager: true });
+const mdKey = Object.keys(mdFiles).find(k => k.includes(slug));
+const mdModule = mdKey ? mdFiles[mdKey] as any : null;
+const Content = mdModule?.Content;
+---
+
+<Layout title={`${activity.cnTitle} — DeepLearner`}>
+  <Navbar />
+  <main class="w-full flex-grow">
+
+    <!-- Hero Banner -->
+    <section class="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
+      <img src={activity.image} alt={activity.cnTitle} class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30"></div>
+      <div class="absolute inset-0 flex flex-col justify-end max-w-7xl mx-auto px-6 lg:px-12 pb-12 md:pb-16">
+        <a href="/#activities" class="inline-flex items-center gap-2 font-mono text-sm text-gray-400 hover:text-white transition-colors mb-6 uppercase tracking-widest">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          返回活动
+        </a>
+        <span class="font-mono text-xs text-blue-400 uppercase tracking-widest mb-3 block">{activity.enTitle}</span>
+        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-medium text-white tracking-tight">{activity.cnTitle}</h1>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="w-full bg-black py-16 md:py-24">
+      <div class="max-w-4xl mx-auto px-6 lg:px-12">
+        
+        <!-- Lead description -->
+        <div class="border-l-2 border-white/20 pl-6 mb-12">
+          <p class="text-xl md:text-2xl text-white font-normal font-sans leading-relaxed">{activity.desc}</p>
+        </div>
+
+        <!-- Markdown content -->
+        {Content && (
+          <article class="prose prose-invert prose-lg max-w-none
+            prose-headings:font-display prose-headings:font-medium prose-headings:tracking-tight
+            prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-12 prose-h2:mb-6
+            prose-p:text-gray-300 prose-p:font-light prose-p:leading-relaxed
+            prose-strong:text-white prose-strong:font-medium
+            prose-li:text-gray-300
+            prose-table:border prose-table:border-white/10
+            prose-th:border prose-th:border-white/10 prose-th:p-3 prose-th:text-left prose-th:text-white prose-th:font-medium prose-th:bg-white/5
+            prose-td:border prose-td:border-white/10 prose-td:p-3 prose-td:text-gray-300
+            prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
+          ">
+            <Content />
+          </article>
+        )}
+
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,106 @@
+---
+const bgImage = "url('/images/landing_bg.jpg')";
+---
+
+<section
+  id="home"
+  class="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-20"
+>
+  <!-- Background Image with Gradient Overlay -->
+  <div
+    class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+    style={`background-image: ${bgImage};`}
+  >
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60"
+    >
+    </div>
+  </div>
+
+  <!-- Content Container -->
+  <div
+    class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-start justify-center text-left"
+  >
+    <div class="flex flex-col gap-8 max-w-4xl gsap-stagger-container">
+      <!-- Main Title -->
+      <h1
+        class="font-display text-5xl md:text-7xl lg:text-[5rem] font-semibold leading-tight tracking-tight text-white mb-2 gsap-stagger-item"
+        style="font-family: 'MiSans', sans-serif;"
+      >
+        <span>DeepLearner</span><br />
+        <span
+          class="block mt-2 text-white"
+          >人工智能学习社</span
+        >
+      </h1>
+
+      <!-- Divider -->
+      <div class="w-16 md:w-24 h-1 bg-white gsap-stagger-item"></div>
+
+      <!-- Slogan -->
+      <div 
+        class="mt-4 border-l-2 border-white/30 pl-6 gsap-stagger-item" 
+        style="font-family: 'MiSans', sans-serif;"
+      >
+        <p
+          class="text-lg md:text-2xl font-light tracking-widest text-gray-200 mb-2"
+        >
+          永不停止前进的步伐
+        </p>
+        <p
+          class="text-base md:text-lg font-light tracking-widest text-white/70 uppercase"
+        >
+          Unstoppable. Always Forward.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div
+    class="hero-scroll-indicator absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10 opacity-60 hover:opacity-100 transition-opacity"
+  >
+    <span class="font-mono text-xs tracking-widest uppercase text-white"
+      >Scroll</span
+    >
+    <div class="w-[1px] h-12 bg-white/30 overflow-hidden relative">
+      <div
+        class="w-full h-full bg-white animate-[scroll-down_2s_ease-in-out_infinite]"
+      >
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes scroll-down {
+    0% {
+      transform: translateY(-100%);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+
+  document.addEventListener('astro:page-load', () => {
+    // Animate scroll indicator strictly on page load
+    gsap.fromTo('.hero-scroll-indicator', 
+      { y: 30, opacity: 0 },
+      { 
+        y: 0, 
+        opacity: 1, 
+        duration: 1, 
+        delay: 1.2, 
+        ease: 'power3.out',
+        clearProps: 'opacity,transform' 
+      }
+    );
+  });
+</script>

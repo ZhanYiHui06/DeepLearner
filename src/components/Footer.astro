@@ -1,0 +1,70 @@
+---
+const links = [
+  { name: "关于", href: "#about" },
+  { name: "活动", href: "#activities" },
+  { name: "影像", href: "#gallery" },
+  { name: "加入", href: "#join" },
+  { name: "联系", href: "#contact" },
+];
+---
+
+<footer
+  class="w-full bg-black py-12 md:py-20 border-t-2 border-white/10 relative overflow-hidden"
+>
+  <div
+    class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 items-center mb-16"
+  >
+    <!-- Left: Logo & Slogan -->
+    <div class="md:col-span-6 flex flex-col gap-6">
+      <a href="#" class="inline-block" aria-label="返回顶部">
+        <img
+          src="/images/logo_white.png"
+          alt="DeepLearner Logo"
+          class="h-10 w-auto object-contain"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        />
+        <span
+          class="hidden font-display font-semibold text-2xl tracking-wider uppercase text-white"
+          >DEEPLEARNER.</span
+        >
+      </a>
+      <p
+        class="font-sans text-gray-400 font-light text-lg tracking-wide border-l-4 border-white/20 pl-4"
+      >
+        永不停止前进的步伐
+      </p>
+    </div>
+
+    <div class="md:col-span-6 flex flex-col items-start md:items-end gap-4">
+      <span class="font-sans font-semibold text-xs text-gray-500 uppercase tracking-widest">指导单位</span>
+      <a href="https://ai.ntu.edu.cn/" target="_blank" rel="noopener noreferrer" class="block">
+        <img 
+          src="/images/school.png" 
+          alt="人工智能与计算机学院" 
+          class="h-12 w-auto object-contain"
+        />
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom Divider -->
+  <div
+    class="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"
+  >
+  </div>
+
+  <!-- Copyright -->
+  <div
+    class="max-w-7xl mx-auto px-6 lg:px-12 mt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono text-gray-600 uppercase tracking-widest text-center sm:text-left"
+  >
+    <p>© 2026 DeepLearner · All rights reserved.</p>
+    <p>南通大学DeepLearner人工智能学习社</p>
+  </div>
+
+  <!-- Decorative text block -->
+  <div
+    class="absolute -bottom-16 left-1/2 -translate-x-1/2 text-[15rem] font-display font-semibold text-white/[0.02] whitespace-nowrap pointer-events-none select-none"
+  >
+    DEEPLEARNER
+  </div>
+</footer>

@@ -1,0 +1,76 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+import brillianceArchives from '../../../data/brilliance_archives.json';
+
+export function getStaticPaths() {
+  return brillianceArchives.map(archive => ({
+    params: { id: archive.id },
+  }));
+}
+
+const { id } = Astro.params;
+const archive = brillianceArchives.find(a => a.id === id);
+
+if (!archive) return Astro.redirect('/activities/behind-the-brilliance');
+---
+
+<Layout title={`${archive.title} — DeepLearner`}>
+  <Navbar />
+  <main class="w-full bg-black min-h-screen pt-24 pb-20">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12">
+      
+      <!-- Back Link -->
+      <a 
+        href="/activities/behind-the-brilliance" 
+        class="inline-flex items-center gap-2 font-mono text-sm text-gray-500 hover:text-white transition-colors mb-12 uppercase tracking-widest group"
+      >
+        <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M15 19l-7-7 7-7" />
+        </svg>
+        返回 闪光点背后的故事
+      </a>
+
+      <!-- Header Information -->
+      <div class="mb-12">
+        <span class="font-mono text-xs text-blue-400 uppercase tracking-widest mb-3 block">{archive.date}</span>
+        <h1 class="font-display text-3xl md:text-5xl font-medium text-white tracking-tight leading-tight">
+          {archive.title}
+        </h1>
+      </div>
+
+      <!-- Action: Download PPT -->
+      <div class="mb-16">
+        <a 
+          href={archive.ppt} 
+          class="inline-flex items-center gap-4 bg-white text-black px-8 py-4 font-display font-semibold hover:bg-gray-200 transition-all group"
+        >
+          <span>下载嘉宾演讲 PPT</span>
+          <svg class="w-5 h-5 group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 17V3m0 14l-4-4m4 4l4-4m5 8H3" />
+          </svg>
+        </a>
+        <p class="text-xs text-gray-500 font-mono mt-4 uppercase tracking-widest">
+          PDF / PPTX FORMAT AVAILABLE
+        </p>
+      </div>
+
+      <!-- Poster Section -->
+      <div class="space-y-6">
+        <h2 class="font-display text-xl text-white font-medium border-l-2 border-white pl-4 uppercase tracking-widest">
+          活动海报
+        </h2>
+        <div class="border border-white/10 bg-white/[0.02] p-4 md:p-8">
+          <img 
+            src={archive.poster} 
+            alt={archive.title} 
+            class="w-full h-auto shadow-2xl transition-transform duration-700 hover:scale-[1.01]"
+          />
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <Footer />
+</Layout>

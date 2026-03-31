@@ -1,0 +1,95 @@
+---
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "DeepLearner - 南通大学唯一的也是最具影响力的 AI 学习社区。" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN" class="scroll-smooth bg-black text-white">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<ClientRouter />
+		
+		<!-- Open Graph / Social Media -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+
+		<title>{title}</title>
+	</head>
+	<body class="antialiased min-h-screen flex flex-col items-center w-full">
+		<slot />
+		
+		<script>
+			import { gsap } from 'gsap';
+			import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+			gsap.registerPlugin(ScrollTrigger);
+
+			// 全局通用入场动画 (Fade Up)
+			const fadeUpElements = document.querySelectorAll('.gsap-fade-up');
+			fadeUpElements.forEach((el) => {
+				gsap.fromTo(el, 
+					{ y: 50, opacity: 0 },
+					{
+						y: 0, 
+						opacity: 1,
+						duration: 1,
+						ease: 'power3.out',
+						scrollTrigger: {
+							trigger: el,
+							start: 'top 85%',
+							toggleActions: 'play none none none'
+						}
+					}
+				);
+			});
+
+			// 全局通用交错动画 (Stagger)
+			const staggerContainers = document.querySelectorAll('.gsap-stagger-container');
+			staggerContainers.forEach((container) => {
+				const items = container.querySelectorAll('.gsap-stagger-item');
+				if (items.length > 0) {
+					gsap.fromTo(items,
+						{ y: 50, opacity: 0 },
+						{
+							y: 0,
+							opacity: 1,
+							duration: 0.8,
+							stagger: 0.15,
+							ease: 'power3.out',
+							scrollTrigger: {
+								trigger: container,
+								start: 'top 80%',
+								toggleActions: 'play none none none'
+							}
+						}
+					);
+				}
+			});
+
+			// Update URL hash on scroll based on visible section
+			const sections = document.querySelectorAll('section[id]');
+			const hashObserver = new IntersectionObserver((entries) => {
+				for (const entry of entries) {
+					if (entry.isIntersecting) {
+						const id = entry.target.id;
+						history.replaceState(null, '', `#${id}`);
+					}
+				}
+			}, { threshold: 0.3 });
+
+			sections.forEach(section => hashObserver.observe(section));
+		</script>
+	</body>
+</html>

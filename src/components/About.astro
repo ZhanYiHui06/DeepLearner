@@ -1,0 +1,132 @@
+---
+---
+<section id="about" class="w-full bg-black py-24 md:py-36 relative border-t-2 border-white/10">
+  
+  <!-- Content -->
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+      
+      <!-- Title Area (Left Column on Desktop) -->
+      <div 
+        class="lg:col-span-5 lg:sticky lg:top-32 gsap-fade-up"
+      >
+        <span class="text-white/40 font-mono tracking-[0.2em] text-sm uppercase mb-4 block">
+          [ 01 — About Us ]
+        </span>
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-semibold bg-clip-text text-transparent bg-gradient-to-b from-[#ffffff] to-[#999999] leading-[1.1]">
+          这里是<br />
+          DeepLearner！
+        </h2>
+        
+        <!-- Brutalist Divider -->
+        <div class="w-20 h-2 bg-white mt-8 hidden lg:block"></div>
+      </div>
+
+      <!-- Text Content Area (Right Column on Desktop) -->
+      <div 
+        class="lg:col-span-7 space-y-8 font-sans text-lg md:text-xl text-gray-300 leading-relaxed font-light gsap-stagger-container"
+      >
+        
+        <p class="gsap-stagger-item">
+          <strong class="text-white font-semibold">DeepLearner</strong> 是南通大学校内具有广泛影响力的 AI 学习社群。我们汇聚了来自计算机、设计、经济、管理等不同学科背景的成员，以共同的好奇心为纽带，探索人工智能技术的无限可能。
+        </p>
+        
+        <p class="gsap-stagger-item">
+          我们相信，AI <strong class="text-white font-semibold">不只属于程序员</strong>。无论你是初次接触机器学习的新手，还是已有项目经验的实践者，DeepLearner 都是一个可以真正学到东西、找到同路人的地方。
+        </p>
+
+        <p class="gsap-stagger-item">
+          在这里，我们动手做项目，分享前沿资讯，也讨论 AI 与各个领域碰撞出的新思路。我们<strong class="text-white font-semibold">不以竞赛成绩定义价值</strong>，而以每一次真实的学习与协作，推动成员持续向前。
+        </p>
+
+        <!-- Slogan Area (Converted to Body Text) -->
+        <p class="gsap-stagger-item">
+          永不停止前进的步伐。<br />
+          <span class="text-gray-500 text-sm md:text-base uppercase tracking-widest">Never Stop Moving Forward.</span>
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="mt-20 lg:mt-32 border border-white/10 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 gsap-fade-up">
+      <!-- Days Active -->
+      <div class="p-8 md:p-12 flex flex-col items-center md:items-start text-center md:text-left transition-colors hover:bg-white/[0.02]">
+        <div class="flex items-baseline gap-2 mb-4">
+          <span class="font-display text-5xl md:text-6xl font-semibold text-white tracking-tighter stat-number" data-target="auto" data-start="2025-05-07">0</span>
+          <span class="text-white/30 font-mono text-xs uppercase tracking-widest">Days</span>
+        </div>
+        <p class="font-sans text-sm md:text-base text-gray-400 tracking-wide leading-relaxed">
+          社团已成立天数<br />
+          <span class="text-white/20 font-mono text-[10px] uppercase tracking-tighter">(Since 2025.5.7)</span>
+        </p>
+      </div>
+
+      <!-- Members count -->
+      <div class="p-8 md:p-12 flex flex-col items-center md:items-start text-center md:text-left transition-colors hover:bg-white/[0.02]">
+        <div class="flex items-baseline gap-2 mb-4">
+          <span class="font-display text-5xl md:text-6xl font-semibold text-white tracking-tighter stat-number" data-target="194">0</span>
+          <span class="text-white/30 font-mono text-xs uppercase tracking-widest">Users</span>
+        </div>
+        <p class="font-sans text-sm md:text-base text-gray-400 tracking-wide">已有社员数</p>
+      </div>
+
+      <!-- Activities count -->
+      <div class="p-8 md:p-12 flex flex-col items-center md:items-start text-center md:text-left transition-colors hover:bg-white/[0.02]">
+        <div class="flex items-baseline gap-2 mb-4">
+          <span class="font-display text-5xl md:text-6xl font-semibold text-white tracking-tighter stat-number" data-target="20">0</span>
+          <span class="text-white/30 font-display text-3xl md:text-4xl font-semibold">+</span>
+        </div>
+        <p class="font-sans text-sm md:text-base text-gray-400 tracking-wide">已举办活动数</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Decorative geometric elements -->
+  <div class="absolute top-0 right-0 w-64 h-64 bg-white/[0.02] rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
+
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  document.addEventListener('astro:page-load', () => {
+    const stats = document.querySelectorAll('.stat-number');
+    
+    stats.forEach(stat => {
+      const element = stat as HTMLElement;
+      let targetValue = 0;
+      
+      // Calculate target if set to auto
+      if (element.dataset.target === 'auto' && element.dataset.start) {
+        const startDate = new Date(element.dataset.start);
+        const today = new Date();
+        const diffTime = Math.abs(today.getTime() - startDate.getTime());
+        targetValue = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      } else {
+        targetValue = parseInt(element.dataset.target || '0', 10);
+      }
+
+      // Animate from 0 to target when visible
+      gsap.to({ val: 0 }, {
+        val: targetValue,
+        duration: 2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: element,
+          start: 'top 90%',
+          once: true
+        },
+        onUpdate: function() {
+          element.textContent = Math.floor(this.targets()[0].val).toString();
+        }
+      });
+    });
+  });
+</script>

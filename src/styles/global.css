@@ -1,0 +1,135 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: 'MiSans', system-ui, sans-serif;
+  --font-display: 'MiSans', system-ui, sans-serif;
+  --font-mono: 'MiSans', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Normal.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Demibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MiSans';
+  src: url('/fonts/MiSans-Semibold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: #000;
+    color: #fff;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  ::selection {
+    background-color: #fff;
+    color: #000;
+  }
+
+  /* AOS custom styling if needed for specific triggers */
+  [data-aos] {
+    pointer-events: none;
+  }
+  [data-aos].aos-animate {
+    pointer-events: auto;
+  }
+}
+
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  }
+  .text-shadow-md {
+    text-shadow: 0 4px 8px rgba(0,0,0,0.8);
+  }
+  .text-shadow-lg {
+    text-shadow: 0 8px 16px rgba(0,0,0,0.9);
+  }
+  
+  /* Neo-brutalist specific utilities */
+  .border-sharp {
+    border-radius: 0;
+  }
+  
+  .glass-panel {
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* 
+  Custom Page Transition (Zoom In/Out) for Astro ViewTransitions
+*/
+@keyframes zoom-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes zoom-out-scale {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(1.04); }
+}
+@keyframes fade-out-simple {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes fade-in-simple {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Forward Navigation (Home -> Subpage) */
+::view-transition-old(root) {
+  animation: 0.3s cubic-bezier(0.4, 0, 0.2, 1) both fade-out-simple;
+}
+::view-transition-new(root) {
+  animation: 0.4s cubic-bezier(0.4, 0, 0.2, 1) both zoom-in;
+}
+
+/* Backward Navigation (Subpage -> Home) */
+html[data-astro-transition-dir="back"]::view-transition-old(root) {
+  animation: 0.3s cubic-bezier(0.4, 0, 0.2, 1) both zoom-out-scale;
+}
+html[data-astro-transition-dir="back"]::view-transition-new(root) {
+  animation: 0.4s cubic-bezier(0.4, 0, 0.2, 1) both fade-in-simple;
+}

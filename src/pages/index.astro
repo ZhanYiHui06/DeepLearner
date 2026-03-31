@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Activities from '../components/Activities.astro';
+import Gallery from '../components/Gallery.astro';
+import Join from '../components/Join.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+
+// Welcome to DeepLearner Astro Website.
+---
+
+<Layout title="DeepLearner 人工智能学习社">
+	<Navbar />
+	<main class="w-full flex-grow flex flex-col items-center justify-center">
+		<Hero />
+		<About />
+		<Activities />
+		<Gallery />
+		<Join />
+		<Contact />
+	</main>
+	<Footer />
+</Layout>

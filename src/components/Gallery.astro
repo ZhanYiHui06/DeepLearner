@@ -1,0 +1,174 @@
+---
+import photos from '../data/gallery_featured.json';
+---
+
+<section id="gallery" class="w-full bg-black py-24 md:py-36 border-t-2 border-white/10 relative">
+  
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+    <!-- Header -->
+    <div class="text-center mb-16 gsap-fade-up">
+      <span class="text-white/40 font-mono tracking-[0.2em] text-sm uppercase mb-4 block">
+        [ 03 — Gallery ]
+      </span>
+      <h2 class="font-display text-4xl sm:text-5xl font-semibold text-white tracking-tight">
+        影像资料
+      </h2>
+    </div>
+  </div>
+
+  <!-- Custom Carousel -->
+  <div class="gallery-carousel relative w-full h-[280px] md:h-[500px]">
+    <!-- Track: holds all slides, positioned absolutely -->
+    <div class="gallery-track relative w-full h-full">
+      {photos.map((item, i) => (
+        <div
+          class="gallery-card absolute top-0 left-1/2 cursor-pointer w-[85%] md:w-[65%] max-w-[800px] h-full"
+          data-index={i}
+          style="transform: translateX(-50%);"
+        >
+          <div class="relative w-full h-full overflow-hidden border border-white/20 shadow-2xl bg-[#111]">
+            <img
+              src={item.img}
+              alt={item.title}
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <!-- Gradient Overlay (bottom 40% only) -->
+            <div class="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-6 md:p-10">
+              <h3 class="font-display font-semibold text-xl md:text-3xl text-white mb-2 leading-tight drop-shadow-lg">
+                {item.title}
+              </h3>
+              <p class="font-mono text-sm md:text-base text-gray-400 font-light tracking-wide">
+                {item.date}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button class="gallery-prev absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 border border-white/20 bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:border-white/50 transition-colors" aria-label="Previous">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="gallery-next absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 border border-white/20 bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:border-white/50 transition-colors" aria-label="Next">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+    <!-- View More -->
+    <div class="mt-16 text-center gsap-fade-up">
+      <a
+        href="/gallery"
+        class="group inline-flex items-center gap-2 font-mono text-white/80 hover:text-white uppercase tracking-widest text-sm transition-colors relative"
+      >
+        <span>查看更多</span>
+        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+        <span class="absolute -bottom-2 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full"></span>
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+
+  function initGallery() {
+    const cards = document.querySelectorAll('.gallery-card') as NodeListOf<HTMLElement>;
+    if (cards.length === 0) return;
+    
+    const total = cards.length;
+    let current = 0;
+    let autoTimer: ReturnType<typeof setInterval>;
+
+    function getOffset(index: number): number {
+      let diff = index - current;
+      if (diff > total / 2) diff -= total;
+      if (diff < -total / 2) diff += total;
+      return diff;
+    }
+
+    function layout(animate = true) {
+      cards.forEach((card, i) => {
+        const offset = getOffset(i);
+        const absOffset = Math.abs(offset);
+
+        const xPercent = -50 + offset * 55;
+        const scale = absOffset === 0 ? 1 : 0.75;
+        const zIndex = 20 - absOffset;
+        const blur = absOffset === 0 ? 0 : 6;
+        const brightness = absOffset === 0 ? 1 : 0.4;
+        const opacity = absOffset <= 2 ? 1 : 0;
+
+        const props: any = {
+          xPercent: xPercent,
+          scale: scale,
+          zIndex: zIndex,
+          opacity: opacity,
+          filter: `blur(${blur}px) brightness(${brightness})`,
+          duration: animate ? 0.7 : 0,
+          ease: 'power3.out',
+          overwrite: true,
+        };
+
+        gsap.to(card, props);
+      });
+    }
+
+    function goTo(index: number) {
+      current = ((index % total) + total) % total;
+      layout(true);
+    }
+
+    function next() {
+      goTo(current + 1);
+    }
+
+    function prev() {
+      goTo(current - 1);
+    }
+
+    cards.forEach((card, i) => {
+      card.addEventListener('click', () => {
+        if (i !== current) {
+          goTo(i);
+          resetAuto();
+        }
+      });
+    });
+
+    document.querySelector('.gallery-prev')?.addEventListener('click', () => {
+      prev();
+      resetAuto();
+    });
+
+    document.querySelector('.gallery-next')?.addEventListener('click', () => {
+      next();
+      resetAuto();
+    });
+
+    function startAuto() {
+      autoTimer = setInterval(next, 4000);
+    }
+
+    function resetAuto() {
+      clearInterval(autoTimer);
+      startAuto();
+    }
+
+    layout(false);
+    startAuto();
+
+    // Clean up interval when navigating away
+    document.addEventListener('astro:before-preparation', () => {
+      clearInterval(autoTimer);
+    }, { once: true });
+  }
+
+  // Hook into ViewTransitions lifecycle
+  document.addEventListener('astro:page-load', initGallery);
+</script>

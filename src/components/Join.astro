@@ -1,0 +1,121 @@
+---
+
+---
+
+<section
+  id="join"
+  class="w-full bg-black py-24 md:py-36 border-t-2 border-white/10"
+>
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div
+      class="flex flex-col items-center text-center justify-center gsap-fade-up"
+    >
+      <span
+        class="text-white/40 font-mono tracking-[0.2em] text-sm uppercase mb-4 block"
+      >
+        [ 04 — Join Us ]
+      </span>
+      <h2
+        class="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-white mb-6"
+      >
+        加入我们
+      </h2>
+      <p class="font-sans text-xl md:text-2xl text-gray-400 font-light mb-12">
+        探索你的能力边界，就在这里
+      </p>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-4 max-w-4xl w-full mx-auto"
+      >
+        <!-- Join Method 1: QQ Group -->
+        <div
+          class="join-card bg-[#0a0a0a] border border-white/10 p-8 relative overflow-hidden group"
+        >
+          <a
+            href="https://qm.qq.com/q/dofvI4KsCc"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="absolute inset-0 z-10"></a>
+          <div
+            class="w-32 h-32 mx-auto mb-6 bg-white/5 border border-white/20 relative"
+          >
+            <img
+              src="/images/qq_code.png"
+              alt="QQ交流群二维码"
+              class="w-full h-full object-cover filter invert grayscale group-hover:grayscale-0 transition-all duration-300 relative z-10"
+              onerror={`this.src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><rect width="128" height="128" fill="%23222"/></svg>'`}
+            />
+          </div>
+          <h3
+            class="font-display text-xl text-white mb-3 tracking-wide text-center"
+          >
+            QQ 群
+          </h3>
+          <p
+            class="font-sans text-sm text-gray-500 font-light text-center leading-relaxed"
+          >
+            扫描二维码，加入 DeepLearner 官方 QQ
+            交流群，获取最新活动资讯与资源。
+          </p>
+        </div>
+
+        <!-- Join Method 2: Platform -->
+        <div
+          class="join-card bg-[#0a0a0a] border border-white/10 p-8 flex flex-col justify-center relative overflow-hidden group"
+        >
+          <a
+            href="https://shetuan.ntu.edu.cn/Website/HomePage/Main?id=276"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="absolute inset-0 z-10"></a>
+          <div
+            class="w-16 h-16 mx-auto mb-8 border border-white/30 rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="square"
+              stroke-linejoin="miter"
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+              ></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </div>
+          <h3
+            class="font-display text-xl text-white mb-3 tracking-wide text-center"
+          >
+            系统报名
+          </h3>
+          <p
+            class="font-sans text-sm text-gray-500 font-light text-center leading-relaxed"
+          >
+            通过学校社团管理平台正式加入，享有完整社团成员权益。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+
+  document.addEventListener('astro:page-load', () => {
+    const joinCards = document.querySelectorAll(".join-card");
+    joinCards.forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        gsap.to(card, { borderColor: "rgba(255,255,255,0.4)", duration: 0.3 });
+      });
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, { borderColor: "rgba(255,255,255,0.1)", duration: 0.3 });
+      });
+    });
+  });
+</script>

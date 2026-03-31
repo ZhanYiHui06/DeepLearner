@@ -1,0 +1,66 @@
+---
+import team from '../data/team.json';
+---
+
+<section id="contact" class="w-full bg-[#050505] py-24 md:py-36 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    
+    <div class="flex flex-col items-center text-center justify-center gsap-fade-up mb-12">
+      <span class="text-white/40 font-mono tracking-[0.2em] text-sm uppercase mb-4 block">
+        [ 05 — Contact ]
+      </span>
+      <h2 class="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-white">
+        联系我们
+      </h2>
+    </div>
+
+    <!-- Team Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 gsap-stagger-container">
+      {team.map((member, i) => (
+        <div class="team-card flex items-center gap-6 bg-[#0a0a0a] border border-white/10 p-5 gsap-stagger-item">
+          
+          <!-- Left: Standard ID photo style (4:5 aspect ratio) -->
+          <div class="w-24 shrink-0 aspect-[4/5] bg-[#111] border border-white/10 overflow-hidden">
+            <img 
+              src={member.img} 
+              alt={member.name} 
+              class="w-full h-full object-cover"
+              onerror={`this.src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="150" viewBox="0 0 120 150"><rect width="100%" height="100%" fill="%230a0a0a"/><path d="M60 75 A 20 20 0 1 0 60 35 A 20 20 0 1 0 60 75 Z M 60 85 C 35 85 20 105 20 135 L 100 135 C 100 105 85 85 60 85 Z" fill="%23333"/></svg>'`}
+            />
+          </div>
+          
+          <!-- Right: Info -->
+          <div class="flex flex-col justify-center overflow-hidden">
+            <h4 class="font-display text-xl font-medium text-white tracking-wide truncate">
+              {member.name}
+            </h4>
+            <p class="font-mono text-xs text-blue-400 uppercase tracking-widest mt-2 mb-3 truncate">
+              {member.role}
+            </p>
+            <p class="font-sans text-sm text-gray-400 font-light truncate">
+              {member.contact}
+            </p>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+
+  document.addEventListener('astro:page-load', () => {
+    const teamCards = document.querySelectorAll('.team-card');
+    teamCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, { borderColor: 'rgba(255,255,255,0.4)', duration: 0.3 });
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, { borderColor: 'rgba(255,255,255,0.1)', duration: 0.3 });
+      });
+    });
+  });
+</script>
