@@ -3,7 +3,7 @@ import activitiesData from '../data/activities.json';
 const activities = activitiesData.map(a => ({ ...a, link: `/activities/${a.slug}` }));
 ---
 
-<section id="activities" class="w-full bg-black border-t-2 border-white/10">
+<section id="activities" class="w-full bg-black border-t-2 border-white/10 overflow-hidden">
   <div class="max-w-7xl mx-auto px-8 lg:px-12 py-24 md:py-36">
     
     <!-- Header -->
