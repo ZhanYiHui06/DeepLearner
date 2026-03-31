@@ -47,6 +47,14 @@
 }
 
 @layer base {
+  html {
+    color-scheme: dark;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  
   :root {
     color-scheme: dark;
   }
@@ -55,6 +63,8 @@
     background-color: #000;
     color: #fff;
     font-family: var(--font-sans);
+    width: 100%;
+    max-width: 100vw;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
