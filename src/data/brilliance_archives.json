@@ -1,23 +1,51 @@
 [
   {
-    "id": "session-4",
-    "title": "第四期 · 从零到一的 AI 产品之路",
-    "date": "2026.3.18",
-    "poster": "/images/activity_1.jpg",
-    "ppt": "#"
+    "id": "session-1",
+    "title": "竞赛、绩点、科研、交流，我的成长故事…（郑梦林）",
+    "date": "2025.9.14",
+    "poster": "/images/activities/brilliance/1.png",
+    "ppt": "https://wwayv.lanzouw.com/iax8b3mnplch"
   },
   {
     "id": "session-2",
-    "title": "第二期 · 本科生参与顶会论文的真实历程",
-    "date": "2025.10.14",
-    "poster": "/images/activity_1.jpg",
-    "ppt": "#"
+    "title": "嵌入式、竞赛、科研、交流，我的成长故事…（曹俊杰）",
+    "date": "2025.9.14",
+    "poster": "/images/activities/brilliance/2.png",
+    "ppt": "https://wwayv.lanzouw.com/iRKd73mnpc5g"
   },
   {
-    "id": "session-1",
-    "title": "第一期 · 我的 AI 创业失败与重生",
-    "date": "2025.9.14",
-    "poster": "/images/activity_1.jpg",
-    "ppt": "#"
+    "id": "session-3",
+    "title": "ICPC、CCPC、神经代码翻译，我的成长故事…（梁曹开）",
+    "date": "2025.10.14",
+    "poster": "/images/activities/brilliance/3.png",
+    "ppt": ""
+  },
+  {
+    "id": "session-4",
+    "title": "迷茫、反思、乐观、希望，我的成长故事…（朱越）",
+    "date": "2025.10.14",
+    "poster": "/images/activities/brilliance/4.png",
+    "ppt": ""
+  },
+  {
+    "id": "session-5",
+    "title": "志愿、竞赛、心态、突破，我的成长故事…（张艺涵）",
+    "date": "2025.11.12",
+    "poster": "/images/activities/brilliance/5.png",
+    "ppt": ""
+  },
+  {
+    "id": "session-6",
+    "title": "学业、创新、创业、还有花，我的成长故事…（吴小丽）",
+    "date": "2025.11.12",
+    "poster": "/images/activities/brilliance/6.png",
+    "ppt": ""
+  },
+  {
+    "id": "session-7",
+    "title": "创业、祛魅、跳出既定轨道，我的成长故事…（漆书贤）",
+    "date": "2026.3.9",
+    "poster": "/images/activities/brilliance/7.png",
+    "ppt": ""
   }
 ]

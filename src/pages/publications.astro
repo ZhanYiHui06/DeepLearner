@@ -1,0 +1,148 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import pubs from '../data/publications.json';
+
+const categories = [
+  { key: 'all', label: '全部' },
+  { key: 'paper', label: '论文' },
+  { key: 'software', label: '软著' },
+  { key: 'patent', label: '专利' },
+  { key: 'other', label: '其他' },
+];
+---
+
+<Layout title="学术成果 — DeepLearner">
+  <Navbar />
+  <main class="w-full flex-grow">
+
+    <!-- Header -->
+    <section class="w-full bg-black pt-32 pb-16 md:pt-40 md:pb-20">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <a href="/#publications" class="inline-flex items-center gap-2 font-mono text-sm text-gray-400 hover:text-white transition-colors mb-8 uppercase tracking-widest">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          返回首页
+        </a>
+        <div class="flex flex-col items-start">
+          <span class="text-white/40 font-mono tracking-[0.2em] text-sm uppercase mb-4 block">
+            [ Publications ]
+          </span>
+          <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-semibold text-white tracking-tight">
+            学术成果
+          </h1>
+          <p class="font-sans text-lg text-gray-400 font-light mt-4 max-w-2xl">
+            DeepLearner 社员在科研、开发与创新实践中的成果记录。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Buttons + Grid -->
+    <section class="w-full bg-black pb-24 md:pb-36">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+        <!-- Filters -->
+        <div class="flex flex-wrap gap-3 mb-12 gsap-fade-up">
+          {categories.map((cat, i) => (
+            <button
+              class={`pub-filter-btn font-mono text-sm tracking-widest uppercase px-5 py-2 border transition-colors ${i === 0 ? 'border-white text-black bg-white' : 'border-white/20 text-white/50 hover:border-white hover:text-black hover:bg-white'}`}
+              data-category={cat.key}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+
+        <!-- Cards Grid: 1 card per row (full width) -->
+        <div class="grid grid-cols-1 gap-6 lg:gap-8 gsap-stagger-container">
+          {pubs.map((pub) => (
+            <div class="pub-card pub-item flex items-start gap-6 bg-[#0a0a0a] border border-white/10 p-6 gsap-stagger-item group" data-category={pub.category}>
+              {pub.link && (
+                <a href={pub.link} target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-10"></a>
+              )}
+
+              <!-- Left: Paper/document cover image -->
+              <div class="w-36 md:w-44 shrink-0 aspect-[3/4] bg-[#111] border border-white/10 overflow-hidden">
+                <img
+                  src={pub.image}
+                  alt={pub.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onerror={`this.src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="176" height="235" viewBox="0 0 176 235"><rect width="100%" height="100" fill="%230a0a0a"/><text x="88" y="118" text-anchor="middle" fill="%23444" font-family="monospace" font-size="12">${encodeURIComponent(pub.categoryLabel)}</text></svg>'`}
+                />
+              </div>
+
+              <!-- Right: Info -->
+              <div class="flex flex-col justify-center overflow-hidden flex-1 min-w-0">
+                <div class="flex items-center gap-3 mb-3">
+                  <span class="font-mono text-[10px] tracking-widest uppercase px-2 py-1 border border-white/20 text-white/60">
+                    {pub.categoryLabel}
+                  </span>
+                  <span class="font-mono text-xs text-gray-500">{pub.date}</span>
+                </div>
+                <h3 class="font-display text-lg md:text-xl font-medium text-white tracking-wide mb-2">
+                  {pub.title}
+                </h3>
+                <p class="font-sans text-sm text-gray-400 font-light">
+                  {pub.author}
+                </p>
+              </div>
+
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+
+  document.addEventListener('astro:page-load', () => {
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.pub-filter-btn');
+    const items = document.querySelectorAll('.pub-item') as NodeListOf<HTMLElement>;
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = (btn as HTMLElement).dataset.category;
+
+        // Update active button style
+        filterBtns.forEach(b => {
+          b.classList.remove('border-white', 'text-black', 'bg-white');
+          b.classList.add('border-white/20', 'text-white/50');
+        });
+        btn.classList.remove('border-white/20', 'text-white/50');
+        btn.classList.add('border-white', 'text-black', 'bg-white');
+
+        // Filter cards
+        items.forEach(item => {
+          const itemCat = item.dataset.category;
+          const show = category === 'all' || itemCat === category;
+
+          if (show) {
+            item.style.display = '';
+            gsap.fromTo(item, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' });
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Hover border effect
+    const cards = document.querySelectorAll('.pub-card');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, { borderColor: 'rgba(255,255,255,0.4)', duration: 0.3 });
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, { borderColor: 'rgba(255,255,255,0.1)', duration: 0.3 });
+      });
+    });
+  });
+</script>

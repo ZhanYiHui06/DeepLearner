@@ -61,10 +61,10 @@ if (!archive) return Astro.redirect('/activities/behind-the-brilliance');
         <h2 class="font-display text-xl text-white font-medium border-l-2 border-white pl-4 uppercase tracking-widest">
           活动海报
         </h2>
-        <div class="border border-white/10 bg-white/[0.02] p-4 md:p-8">
-          <img 
-            src={archive.poster} 
-            alt={archive.title} 
+        <div class="poster-trigger border border-white/10 bg-white/[0.02] p-4 md:p-8 cursor-pointer">
+          <img
+            src={archive.poster}
+            alt={archive.title}
             class="w-full h-auto shadow-2xl transition-transform duration-700 hover:scale-[1.01]"
           />
         </div>
@@ -72,5 +72,76 @@ if (!archive) return Astro.redirect('/activities/behind-the-brilliance');
 
     </div>
   </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden items-center justify-center p-4 md:p-12">
+    <button id="lightbox-close" class="absolute top-6 right-6 w-12 h-12 border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-colors z-10">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="lightbox-inner flex flex-col items-center">
+      <img id="lightbox-img" src={archive.poster} alt={archive.title} class="max-w-[85vw] max-h-[75vh] object-contain" />
+      <div class="text-center mt-8">
+        <h3 id="lightbox-title" class="font-display text-xl text-white font-semibold mb-1">{archive.title}</h3>
+        <p id="lightbox-date" class="font-mono text-sm text-gray-400">{archive.date}</p>
+      </div>
+    </div>
+  </div>
+
   <Footer />
 </Layout>
+
+<script>
+  import { gsap } from 'gsap';
+
+  document.addEventListener('astro:page-load', () => {
+    const trigger = document.querySelector('.poster-trigger') as HTMLElement;
+    const lightbox = document.getElementById('lightbox') as HTMLElement;
+    const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+    const lightboxInner = document.querySelector('.lightbox-inner') as HTMLElement;
+    const lightboxClose = document.getElementById('lightbox-close') as HTMLElement;
+
+    trigger?.addEventListener('click', () => {
+      const rect = trigger.getBoundingClientRect();
+      const originX = rect.left + rect.width / 2;
+      const originY = rect.top + rect.height / 2;
+
+      lightbox?.classList.remove('hidden');
+      lightbox?.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+
+      gsap.fromTo(lightbox, { opacity: 0 }, { opacity: 1, duration: 0.3, ease: 'power2.out' });
+      gsap.fromTo(lightboxInner,
+        { scale: 0.3, opacity: 0, transformOrigin: `${originX}px ${originY}px` },
+        { scale: 1, opacity: 1, duration: 0.4, ease: 'power3.out' }
+      );
+    });
+
+    function closeLightbox() {
+      gsap.to(lightboxInner, {
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.25,
+        ease: 'power2.in',
+      });
+      gsap.to(lightbox, {
+        opacity: 0,
+        duration: 0.25,
+        ease: 'power2.in',
+        onComplete: () => {
+          lightbox?.classList.add('hidden');
+          lightbox?.classList.remove('flex');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    lightboxClose?.addEventListener('click', closeLightbox);
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox?.classList.contains('hidden')) closeLightbox();
+    });
+  });
+</script>

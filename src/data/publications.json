@@ -1,0 +1,68 @@
+[
+  {
+    "id": "pub-1",
+    "title": "基于深度学习的图像语义分割方法研究",
+    "author": "詹毅辉、王进",
+    "category": "paper",
+    "categoryLabel": "论文",
+    "date": "2026.3",
+    "image": "/images/publications/pub-1.jpg",
+    "link": "",
+    "featured": true
+  },
+  {
+    "id": "pub-2",
+    "title": "智能校园助手 APP",
+    "author": "理锦诚、吴戎弘",
+    "category": "software",
+    "categoryLabel": "软著",
+    "date": "2025.12",
+    "image": "/images/publications/pub-2.jpg",
+    "link": "",
+    "featured": true
+  },
+  {
+    "id": "pub-3",
+    "title": "一种基于 Transformer 的文本情感分析方法",
+    "author": "孙雨欣、牟文胜",
+    "category": "patent",
+    "categoryLabel": "专利",
+    "date": "2025.10",
+    "image": "/images/publications/pub-3.jpg",
+    "link": "",
+    "featured": true
+  },
+  {
+    "id": "pub-4",
+    "title": "DeepLearner 社团获评校级优秀社团",
+    "author": "DeepLearner 全体成员",
+    "category": "other",
+    "categoryLabel": "其他",
+    "date": "2025.6",
+    "image": "/images/publications/pub-4.jpg",
+    "link": "",
+    "featured": true
+  },
+  {
+    "id": "pub-5",
+    "title": "面向小样本学习的元学习算法优化",
+    "author": "詹毅辉",
+    "category": "paper",
+    "categoryLabel": "论文",
+    "date": "2025.8",
+    "image": "/images/publications/pub-5.jpg",
+    "link": "",
+    "featured": false
+  },
+  {
+    "id": "pub-6",
+    "title": "基于 RAG 的知识库问答系统",
+    "author": "理锦诚、孙雨欣",
+    "category": "software",
+    "categoryLabel": "软著",
+    "date": "2025.5",
+    "image": "/images/publications/pub-6.jpg",
+    "link": "",
+    "featured": false
+  }
+]

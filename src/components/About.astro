@@ -105,10 +105,12 @@
       
       // Calculate target if set to auto
       if (element.dataset.target === 'auto' && element.dataset.start) {
-        const startDate = new Date(element.dataset.start);
+        const [y, m, d] = element.dataset.start.split('-').map(Number);
+        const startDate = new Date(y, m - 1, d);
         const today = new Date();
-        const diffTime = Math.abs(today.getTime() - startDate.getTime());
-        targetValue = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        today.setHours(0, 0, 0, 0);
+        const diffTime = today.getTime() - startDate.getTime();
+        targetValue = Math.floor(diffTime / (1000 * 60 * 60 * 24));
       } else {
         targetValue = parseInt(element.dataset.target || '0', 10);
       }

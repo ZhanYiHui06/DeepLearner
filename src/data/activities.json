@@ -2,28 +2,28 @@
   {
     "cnTitle": "闪光点背后的故事",
     "enTitle": "Behind the Brilliance",
-    "image": "/images/activity_1.jpg",
+    "image": "/images/activities/activity_1.jpg",
     "desc": "邀请校内外优秀的实践者、创业者与研究者，分享他们在 AI 领域真实走过的路——不只是高光时刻，更是背后那些笨拙、迷茫与突破的过程。",
     "slug": "behind-the-brilliance"
   },
   {
-    "cnTitle": "悄悄干件大事",
-    "enTitle": "Under the Radar",
-    "image": "/images/activity_2.jpg",
-    "desc": "不打卡，不表演，只是认真做一件事。我们为有想法的成员提供资源与协作空间，帮助你把脑子里的 idea 变成能跑起来的东西。",
-    "slug": "under-the-radar"
+    "cnTitle": "造物工坊",
+    "enTitle": "Creation Workshop",
+    "image": "/images/activities/activity_2.jpg",
+    "desc": "手把手教你快速上手一项新技术、新项目。每期聚焦一个主题，从零开始，带你搭建一个小作品，真正学以致用。",
+    "slug": "creation-workshop"
   },
   {
     "cnTitle": "人工智能挑战赛",
     "enTitle": "DeepLearner Challenge",
-    "image": "/images/activity_3.jpg",
-    "desc": "DeepLearner 年度技术挑战赛，面向全体成员开放组队参赛。用真实问题检验真实能力，在协作与竞争中找到自己的边界。",
+    "image": "/images/activities/activity_3.jpg",
+    "desc": "DeepLearner 年度算法挑战赛，面向南通大学全体学生开放组队参赛。用生产问题检验真实能力，在协作与竞争中找到自己的边界。",
     "slug": "challenge"
   },
   {
     "cnTitle": "有 AI 公益行",
     "enTitle": "DeepLearner AI for Good",
-    "image": "/images/activity_4.jpg",
+    "image": "/images/activities/activity_4.jpg",
     "desc": "我们走进社区、学校与乡村，用 AI 做一点有意义的事。技术不是终点，让更多人受益才是。",
     "slug": "ai-for-good"
   }

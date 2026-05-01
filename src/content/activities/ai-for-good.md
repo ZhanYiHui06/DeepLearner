@@ -11,11 +11,11 @@ slug: ai-for-good
 ## 往期足迹
 
 <div class="not-prose grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="border border-white/10 p-6">
+  <a href="/activities/ai-for-good/nanton-elderly-university" class="border border-white/10 p-6 hover:border-white/40 hover:bg-white/[0.02] transition-all group">
     <div class="font-mono text-xs text-blue-400 uppercase tracking-widest mb-3">2025.05</div>
-    <h3 class="font-display text-lg text-white font-medium mb-2">南通老年大学篇</h3>
+    <h3 class="font-display text-lg text-white font-medium mb-2 group-hover:text-blue-400 transition-colors">南通老年大学篇</h3>
     <p class="text-sm text-gray-400">走进南通市老年大学，为老年学员讲解 AI 在日常生活中的应用，手把手教学智能工具的使用。</p>
-  </div>
+  </a>
   <div class="border border-white/10 p-6">
     <div class="font-mono text-xs text-blue-400 uppercase tracking-widest mb-3">规划中</div>
     <h3 class="font-display text-lg text-white font-medium mb-2">乡村小学 AI 启蒙</h3>

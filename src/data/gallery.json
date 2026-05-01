@@ -1,8 +1,51 @@
 [
-  { "img": "/images/gallery_1.jpg", "title": "闪光点背后的故事·第二期", "date": "2025.10.14" },
-  { "img": "/images/gallery_2.jpg", "title": "闪光点背后的故事·第一期", "date": "2025.9.14" },
-  { "img": "/images/gallery_3.jpg", "title": "闪光点背后的故事·第四期", "date": "2026.3.18" },
-  { "img": "/images/gallery_4.jpg", "title": "有AI公益行·南通老年大学篇", "date": "2025.5.21" },
-  { "img": "/images/gallery_5.jpg", "title": "赴南通围界盾公司研学", "date": "2025.3.5" },
-  { "img": "/images/gallery_6.jpg", "title": "2025年百团大战", "date": "2025.10.12" }
+  {
+    "img": "/images/gallery/gallery_1.jpg",
+    "title": "闪光点背后的故事·第二期",
+    "date": "2025.10.14",
+    "featured": true
+  },
+  {
+    "img": "/images/gallery/gallery_2.jpg",
+    "title": "闪光点背后的故事·第一期",
+    "date": "2025.9.14",
+    "featured": true
+  },
+  {
+    "img": "/images/gallery/gallery_3.jpg",
+    "title": "闪光点背后的故事·第四期",
+    "date": "2026.3.9",
+    "featured": true
+  },
+  {
+    "img": "/images/gallery/gallery_4.jpg",
+    "title": "有AI公益行·南通老年大学篇",
+    "date": "2025.5.21",
+    "featured": true
+  },
+  {
+    "img": "/images/gallery/gallery_5.jpg",
+    "title": "赴科大讯飞苏州研究院研学",
+    "date": "2025.5.13",
+    "featured": true
+  },
+  {
+    "img": "/images/gallery/gallery_6.jpg",
+    "title": "2025年百团大战",
+    "date": "2025.10.12",
+    "featured": true
+  },
+  {
+    "img": "/images/gallery/gallery_7.jpg",
+    "title": "2025年百团大战",
+    "date": "2025.10.12",
+    "featured": true
+  },
+  {
+    "img": "/images/gallery/gallery_8.png",
+    "title": "闪光点背后的故事·第三期",
+    "date": "2025.11.12",
+    "featured": true
+  }
 ]
+ 

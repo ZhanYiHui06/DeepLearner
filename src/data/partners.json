@@ -1,0 +1,20 @@
+[
+  {
+    "name": "AMD（中国）",
+    "logo": "/images/partners/AMD.png",
+    "desc": "全球领先的半导体公司，专注于高性能 CPU、GPU 及自适应计算产品，旗下 Ryzen、EPYC 和 Radeon 系列广泛应用于 PC、数据中心与 AI 计算领域。",
+    "link": "https://www.amd.com/zh-cn.html"
+  },
+  {
+    "name": "科大讯飞",
+    "logo": "/images/partners/kedaxunfei.png",
+    "desc": "中国人工智能头部企业，深耕语音识别、自然语言处理与认知智能技术，旗下讯飞星火大模型已在教育、医疗、办公等多个垂直场景实现规模化落地。",
+    "link": "https://www.iflytek.com/cn/"
+  },
+  {
+    "name": "中天科技",
+    "logo": "/images/partners/zhontian.png",
+    "desc": "国内领先的综合型线缆与能源互联网企业，产品覆盖光纤光缆、海洋工程、新能源等领域，总部位于南通，是江苏省制造业龙头之一。",
+    "link": "https://www.ztt.cn/"
+  }
+]

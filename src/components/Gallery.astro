@@ -1,5 +1,6 @@
 ---
-import photos from '../data/gallery_featured.json';
+import allPhotos from '../data/gallery.json';
+const photos = allPhotos.filter(p => p.featured);
 ---
 
 <section id="gallery" class="w-full bg-black py-24 md:py-36 border-t-2 border-white/10 relative overflow-hidden">
