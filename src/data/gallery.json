@@ -1,8 +1,14 @@
 [
   {
-    "img": "/images/gallery/gallery_1.jpg",
-    "title": "闪光点背后的故事·第二期",
-    "date": "2025.10.14",
+    "img": "/images/activities/trae/19.jpg",
+    "title": "TRAE on Campus @南通大学",
+    "date": "2026.5.16",
+    "featured": true
+  },
+  {
+    "img": "/images/activities/trae/1.jpg",
+    "title": "TRAE on Campus @南通大学",
+    "date": "2026.5.16",
     "featured": true
   },
   {
@@ -12,10 +18,28 @@
     "featured": true
   },
   {
+    "img": "/images/gallery/gallery_1.jpg",
+    "title": "闪光点背后的故事·第二期",
+    "date": "2025.10.14",
+    "featured": true
+  },
+  {
+    "img": "/images/gallery/gallery_8.png",
+    "title": "闪光点背后的故事·第三期",
+    "date": "2025.11.12",
+    "featured": true
+  },
+  {
     "img": "/images/gallery/gallery_3.jpg",
     "title": "闪光点背后的故事·第四期",
     "date": "2026.3.9",
     "featured": true
+  },
+  {
+    "img": "/images/gallery/gallery_13.jpg",
+    "title": "闪光点背后的故事·第五期",
+    "date": "2026.5.19",
+    "featured": false
   },
   {
     "img": "/images/gallery/gallery_4.jpg",
@@ -42,10 +66,51 @@
     "featured": true
   },
   {
-    "img": "/images/gallery/gallery_8.png",
-    "title": "闪光点背后的故事·第三期",
-    "date": "2025.11.12",
+    "img": "/images/gallery/gallery_9.jpg",
+    "title": "三社联动科技嘉年华",
+    "date": "2025.11.2",
     "featured": true
+  },
+  {
+    "img": "/images/gallery/gallery_10.jpg",
+    "title": "第一届人工智能挑战赛",
+    "date": "2025.11.7",
+    "featured": true
+  },
+  {
+    "img": "/images/gallery/gallery_11.jpg",
+    "title": "全国三维数字化创新设计大赛暨科技文化节",
+    "date": "2026.3.21",
+    "featured": false
+  },
+  {
+    "img": "/images/gallery/gallery_12.jpg",
+    "title": "全国三维数字化创新设计大赛暨科技文化节",
+    "date": "2026.3.21",
+    "featured": true
+  },
+  {
+    "img": "/images/activities/trae/18.jpg",
+    "title": "TRAE on Campus @南通大学",
+    "date": "2026.5.16",
+    "featured": false
+  },
+  {
+    "img": "/images/activities/trae/2.jpg",
+    "title": "TRAE on Campus @南通大学",
+    "date": "2026.5.16",
+    "featured": false
+  },
+  {
+    "img": "/images/activities/trae/3.jpg",
+    "title": "TRAE on Campus @南通大学",
+    "date": "2026.5.16",
+    "featured": false
+  },
+  {
+    "img": "/images/activities/trae/4.jpg",
+    "title": "TRAE on Campus @南通大学",
+    "date": "2026.5.16",
+    "featured": false
   }
 ]
- 

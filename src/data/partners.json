@@ -16,5 +16,11 @@
     "logo": "/images/partners/zhontian.png",
     "desc": "国内领先的综合型线缆与能源互联网企业，产品覆盖光纤光缆、海洋工程、新能源等领域，总部位于南通，是江苏省制造业龙头之一。",
     "link": "https://www.ztt.cn/"
+  },
+  {
+    "name": "字节跳动",
+    "logo": "/images/partners/bytedance.png",
+    "desc": "全球领先的科技公司，旗下拥有抖音、TikTok、今日头条、TRAE等多款现象级产品，在人工智能、推荐算法和内容分发领域处于行业前沿。",
+    "link": "https://www.bytedance.com/"
   }
 ]
