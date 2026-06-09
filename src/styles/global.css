@@ -47,6 +47,12 @@
 }
 
 @layer base {
+  .gsap-stagger-item,
+  .gsap-fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
   html {
     color-scheme: dark;
     width: 100%;
