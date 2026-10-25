@@ -41,6 +41,7 @@ if (!archive) return Astro.redirect('/activities/behind-the-brilliance');
       </div>
 
       <!-- Action: Download PPT -->
+      {archive.ppt && (
       <div class="mb-16">
         <a 
           href={archive.ppt} 
@@ -55,20 +56,23 @@ if (!archive) return Astro.redirect('/activities/behind-the-brilliance');
           PDF / PPTX FORMAT AVAILABLE
         </p>
       </div>
+      )}
 
       <!-- Poster Section -->
+      {archive.poster && (
       <div class="space-y-6">
         <h2 class="font-display text-xl text-white font-medium border-l-2 border-white pl-4 uppercase tracking-widest">
           活动海报
         </h2>
         <div class="poster-trigger border border-white/10 bg-white/[0.02] p-4 md:p-8 cursor-pointer">
-          <img
+          <img loading="lazy" decoding="async"
             src={archive.poster}
             alt={archive.title}
             class="w-full h-auto shadow-2xl transition-transform duration-700 hover:scale-[1.01]"
           />
         </div>
       </div>
+      )}
 
     </div>
   </main>
@@ -79,7 +83,7 @@ if (!archive) return Astro.redirect('/activities/behind-the-brilliance');
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
     </button>
     <div class="lightbox-inner flex flex-col items-center">
-      <img id="lightbox-img" src={archive.poster} alt={archive.title} class="max-w-[85vw] max-h-[75vh] object-contain" />
+      <img loading="lazy" decoding="async" id="lightbox-img" src={archive.poster} alt={archive.title} class="max-w-[85vw] max-h-[75vh] object-contain" />
       <div class="text-center mt-8">
         <h3 id="lightbox-title" class="font-display text-xl text-white font-semibold mb-1">{archive.title}</h3>
         <p id="lightbox-date" class="font-mono text-sm text-gray-400">{archive.date}</p>

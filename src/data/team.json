@@ -1,48 +1,48 @@
 [
   {
-    "img": "/images/team/wangjin.png",
+    "img": "/images/team/wangjin.jpg",
     "name": "王进",
     "role": "指导老师",
     "contact": "Email: wj@ntu.edu.cn"
   },
   {
-    "img": "/images/team/lijincheng.png",
-    "name": "理锦诚",
-    "role": "社长",
-    "contact": "QQ: 435019141"
-  },
-  {
-    "img": "/images/team/zhanyihui.png",
+    "img": "/images/team/zhanyihui.jpg",
     "name": "詹毅辉",
-    "role": "团支书",
+    "role": "社长",
     "contact": "QQ: 2022420355"
   },
   {
-    "img": "/images/team/sunyuxin.png",
+    "img": "/images/team/sunyuxin.jpg",
     "name": "孙雨欣",
-    "role": "活跃社员",
+    "role": "团支书",
     "contact": "QQ: 2246897964"
   },
   {
-    "img": "/images/team/wuronhon.png",
+    "img": "/images/team/lijincheng.jpg",
+    "name": "理锦诚",
+    "role": "活跃社员",
+    "contact": "QQ: 435019141"
+  },
+  {
+    "img": "/images/team/wuronhon.jpg",
     "name": "吴戎弘",
     "role": "活跃社员",
     "contact": "QQ: 2675786440"
   },
   {
-    "img": "/images/team/mouwensheng.png",
+    "img": "/images/team/mouwensheng.jpg",
     "name": "牟文胜",
     "role": "活跃社员",
     "contact": "QQ: 3191854280"
   },
   {
-    "img": "/images/team/wangningbo.png",
+    "img": "/images/team/wangningbo.jpg",
     "name": "王宁博",
     "role": "活跃社员",
     "contact": "QQ: 2475993306"
   },
   {
-    "img": "/images/team/chaoyu.png",
+    "img": "/images/team/chaoyu.jpg",
     "name": "晁宇",
     "role": "活跃社员",
     "contact": "QQ: 1685697466"

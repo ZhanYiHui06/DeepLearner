@@ -24,7 +24,7 @@
     "featured": true
   },
   {
-    "img": "/images/gallery/gallery_8.png",
+    "img": "/images/gallery/gallery_8.jpg",
     "title": "闪光点背后的故事·第三期",
     "date": "2025.11.12",
     "featured": true
@@ -40,6 +40,12 @@
     "title": "闪光点背后的故事·第五期",
     "date": "2026.5.19",
     "featured": false
+  },
+  {
+    "img": "/images/gallery/gallery_14.jpg",
+    "title": "闪光点背后的故事·特别专辑（线上）",
+    "date": "2026.9.22",
+    "featured": true
   },
   {
     "img": "/images/gallery/gallery_4.jpg",

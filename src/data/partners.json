@@ -22,5 +22,23 @@
     "logo": "/images/partners/bytedance.png",
     "desc": "全球领先的科技公司，旗下拥有抖音、TikTok、今日头条、TRAE等多款现象级产品，在人工智能、推荐算法和内容分发领域处于行业前沿。",
     "link": "https://www.bytedance.com/"
+  },
+  {
+    "name": "上海人工智能实验室",
+    "logo": "/images/partners/shailab.png",
+    "desc": "我国人工智能领域的新型科研机构，开展战略性、原创性、前瞻性的科学研究与技术攻关，推出了书生（InternLM）系列开源大模型，致力于打造开放共享的 AI 研究生态。",
+    "link": "https://www.shlab.org.cn/"
+  },
+  {
+    "name": "美团",
+    "logo": "/images/partners/meituan.png",
+    "desc": "中国领先的生活服务电子商务平台，业务覆盖外卖、到店、酒旅、即时零售等数百个生活场景，并持续投入大模型、自动配送与无人机等 AI 技术研发。",
+    "link": "https://www.meituan.com/"
+  },
+  {
+    "name": "观猹",
+    "logo": "/images/partners/watcha.png",
+    "desc": "专注 AI 产品的发现与点评社区，汇聚开发者和用户对各类 AI 工具的真实体验与评测，帮助大家更快找到好用的 AI 产品。",
+    "link": "https://watcha.cn/"
   }
 ]
