@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./fonts.css";
 @plugin "@tailwindcss/typography";
 
 @theme {
@@ -6,46 +7,6 @@
   --font-display: 'MiSans', system-ui, sans-serif;
   --font-mono: 'MiSans', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
-@font-face {
-  font-family: 'MiSans';
-  src: url('/fonts/MiSans-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'MiSans';
-  src: url('/fonts/MiSans-Normal.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'MiSans';
-  src: url('/fonts/MiSans-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'MiSans';
-  src: url('/fonts/MiSans-Demibold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'MiSans';
-  src: url('/fonts/MiSans-Semibold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 @layer base {
   .gsap-stagger-item,
   .gsap-fade-up {

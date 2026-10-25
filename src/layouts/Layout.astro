@@ -36,60 +36,75 @@ const { title, description = "DeepLearner - 南通大学唯一的也是最具影
 
 			gsap.registerPlugin(ScrollTrigger);
 
-			// 全局通用入场动画 (Fade Up)
-			const fadeUpElements = document.querySelectorAll('.gsap-fade-up');
-			fadeUpElements.forEach((el) => {
-				gsap.fromTo(el, 
-					{ y: 50, opacity: 0 },
-					{
-						y: 0, 
-						opacity: 1,
-						duration: 1,
-						ease: 'power3.out',
-						scrollTrigger: {
-							trigger: el,
-							start: 'top 85%',
-							toggleActions: 'play none none none'
-						}
-					}
-				);
-			});
+			// 模块脚本只执行一次，ClientRouter 切页后要在 astro:page-load 里重新初始化，
+			// 否则新页面上 CSS 默认 opacity:0 的元素永远不会被动画显示出来
+			let hashObserver: IntersectionObserver | null = null;
 
-			// 全局通用交错动画 (Stagger)
-			const staggerContainers = document.querySelectorAll('.gsap-stagger-container');
-			staggerContainers.forEach((container) => {
-				const items = container.querySelectorAll('.gsap-stagger-item');
-				if (items.length > 0) {
-					gsap.fromTo(items,
+			function initPage() {
+				// 全局通用入场动画 (Fade Up)
+				const fadeUpElements = document.querySelectorAll('.gsap-fade-up');
+				fadeUpElements.forEach((el) => {
+					gsap.fromTo(el, 
 						{ y: 50, opacity: 0 },
 						{
-							y: 0,
+							y: 0, 
 							opacity: 1,
-							duration: 0.8,
-							stagger: 0.15,
+							duration: 1,
 							ease: 'power3.out',
 							scrollTrigger: {
-								trigger: container,
-								start: 'top 80%',
+								trigger: el,
+								start: 'top 85%',
 								toggleActions: 'play none none none'
 							}
 						}
 					);
-				}
+				});
+
+				// 全局通用交错动画 (Stagger)
+				const staggerContainers = document.querySelectorAll('.gsap-stagger-container');
+				staggerContainers.forEach((container) => {
+					const items = container.querySelectorAll('.gsap-stagger-item');
+					if (items.length > 0) {
+						gsap.fromTo(items,
+							{ y: 50, opacity: 0 },
+							{
+								y: 0,
+								opacity: 1,
+								duration: 0.8,
+								stagger: 0.15,
+								ease: 'power3.out',
+								scrollTrigger: {
+									trigger: container,
+									start: 'top 80%',
+									toggleActions: 'play none none none'
+								}
+							}
+						);
+					}
+				});
+
+				// Update URL hash on scroll based on visible section
+				const sections = document.querySelectorAll('section[id]');
+				hashObserver = new IntersectionObserver((entries) => {
+					for (const entry of entries) {
+						if (entry.isIntersecting) {
+							const id = entry.target.id;
+							history.replaceState(history.state, '', `#${id}`);
+						}
+					}
+				}, { threshold: 0.3 });
+
+				sections.forEach(section => hashObserver!.observe(section));
+			}
+
+			// 离开页面前清理旧页面的 ScrollTrigger 和观察器，避免切页越多越卡
+			document.addEventListener('astro:before-swap', () => {
+				ScrollTrigger.getAll().forEach(t => t.kill());
+				hashObserver?.disconnect();
+				hashObserver = null;
 			});
 
-			// Update URL hash on scroll based on visible section
-			const sections = document.querySelectorAll('section[id]');
-			const hashObserver = new IntersectionObserver((entries) => {
-				for (const entry of entries) {
-					if (entry.isIntersecting) {
-						const id = entry.target.id;
-						history.replaceState(null, '', `#${id}`);
-					}
-				}
-			}, { threshold: 0.3 });
-
-			sections.forEach(section => hashObserver.observe(section));
+			document.addEventListener('astro:page-load', initPage);
 		</script>
 	</body>
 </html>

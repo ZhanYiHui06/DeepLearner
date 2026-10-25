@@ -68,7 +68,7 @@ import photos from '../data/gallery.json';
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
       <div class="lightbox-inner flex flex-col items-center">
-        <img id="lightbox-img" src="" alt="" class="max-w-[85vw] max-h-[70vh] object-contain" />
+        <img loading="lazy" decoding="async" id="lightbox-img" src="" alt="" class="max-w-[85vw] max-h-[70vh] object-contain" />
         <div class="text-center mt-8">
           <h3 id="lightbox-title" class="font-display text-xl text-white font-semibold mb-1"></h3>
           <p id="lightbox-date" class="font-mono text-sm text-gray-400"></p>
