@@ -6,22 +6,22 @@
     "contact": "Email: wj@ntu.edu.cn"
   },
   {
-    "img": "/images/team/lijincheng.png",
-    "name": "理锦诚",
-    "role": "社长",
-    "contact": "QQ: 435019141"
-  },
-  {
     "img": "/images/team/zhanyihui.png",
     "name": "詹毅辉",
-    "role": "团支书",
+    "role": "社长",
     "contact": "QQ: 2022420355"
   },
   {
     "img": "/images/team/sunyuxin.png",
     "name": "孙雨欣",
-    "role": "活跃社员",
+    "role": "团支书",
     "contact": "QQ: 2246897964"
+  },
+  {
+    "img": "/images/team/lijincheng.png",
+    "name": "理锦诚",
+    "role": "活跃社员",
+    "contact": "QQ: 435019141"
   },
   {
     "img": "/images/team/wuronhon.png",
