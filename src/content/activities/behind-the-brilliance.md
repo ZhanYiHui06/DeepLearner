@@ -71,4 +71,9 @@ slug: behind-the-brilliance
     <span class="text-white flex-1">ICPC、AI、大模型算法，我的成长故事…（肖如航）</span>
     <svg class="w-4 h-4 text-gray-600 group-hover:text-white group-hover:translate-x-1 transition-all shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
   </a>
+  <a href="/activities/behind-the-brilliance/session-9" class="flex items-center gap-4 border border-white/10 p-4 hover:border-white/40 hover:bg-white/[0.02] transition-all group">
+    <span class="font-mono text-sm text-gray-500 shrink-0 w-24">2026.9.22</span>
+    <span class="text-white flex-1">特别专辑：不读研、不考公，而是选择就业，大学四年应该怎么过？（吴小丽）</span>
+    <svg class="w-4 h-4 text-gray-600 group-hover:text-white group-hover:translate-x-1 transition-all shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </a>
 </div>

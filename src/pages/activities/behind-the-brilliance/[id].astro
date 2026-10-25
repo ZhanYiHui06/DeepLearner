@@ -41,6 +41,7 @@ if (!archive) return Astro.redirect('/activities/behind-the-brilliance');
       </div>
 
       <!-- Action: Download PPT -->
+      {archive.ppt && (
       <div class="mb-16">
         <a 
           href={archive.ppt} 
@@ -55,8 +56,10 @@ if (!archive) return Astro.redirect('/activities/behind-the-brilliance');
           PDF / PPTX FORMAT AVAILABLE
         </p>
       </div>
+      )}
 
       <!-- Poster Section -->
+      {archive.poster && (
       <div class="space-y-6">
         <h2 class="font-display text-xl text-white font-medium border-l-2 border-white pl-4 uppercase tracking-widest">
           活动海报
@@ -69,6 +72,7 @@ if (!archive) return Astro.redirect('/activities/behind-the-brilliance');
           />
         </div>
       </div>
+      )}
 
     </div>
   </main>
