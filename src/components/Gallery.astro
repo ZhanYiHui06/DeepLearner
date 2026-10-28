@@ -1,6 +1,10 @@
 ---
 import allPhotos from '../data/gallery.json';
-const photos = allPhotos.filter(p => p.featured);
+import { getLang, localizePath, pick, useTranslations } from '../i18n';
+
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const photos = allPhotos.filter(p => p.featured).map(p => pick(p, lang));
 ---
 
 <section id="gallery" class="w-full bg-black py-24 md:py-36 border-t-2 border-white/10 relative overflow-hidden">
@@ -12,7 +16,7 @@ const photos = allPhotos.filter(p => p.featured);
         [ 03 — Gallery ]
       </span>
       <h2 class="font-display text-4xl sm:text-5xl font-semibold text-white tracking-tight">
-        影像资料
+        {t('gallery.heading')}
       </h2>
     </div>
   </div>
@@ -60,10 +64,10 @@ const photos = allPhotos.filter(p => p.featured);
     <!-- View More -->
     <div class="mt-16 text-center gsap-fade-up">
       <a
-        href="/gallery"
+        href={localizePath('/gallery', lang)}
         class="group inline-flex items-center gap-2 font-mono text-white/80 hover:text-white uppercase tracking-widest text-sm transition-colors relative"
       >
-        <span>查看更多</span>
+        <span>{t('common.viewMore')}</span>
         <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>

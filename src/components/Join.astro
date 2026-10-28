@@ -1,5 +1,8 @@
 ---
+import { getLang, useTranslations } from '../i18n';
 
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
 ---
 
 <section
@@ -18,10 +21,10 @@
       <h2
         class="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-white mb-6"
       >
-        加入我们
+        {t('join.heading')}
       </h2>
       <p class="font-sans text-xl md:text-2xl text-gray-400 font-light mb-12">
-        探索你的能力边界，就在这里
+        {t('join.tagline')}
       </p>
 
       <div
@@ -41,7 +44,7 @@
           >
             <img loading="lazy" decoding="async"
               src="/images/qq_code.png"
-              alt="QQ交流群二维码"
+              alt={t('join.qqAlt')}
               class="w-full h-full object-cover filter invert grayscale group-hover:grayscale-0 transition-all duration-300 relative z-10"
               onerror={`this.src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><rect width="128" height="128" fill="%23222"/></svg>'`}
             />
@@ -49,13 +52,12 @@
           <h3
             class="font-display text-xl text-white mb-3 tracking-wide text-center"
           >
-            QQ 群
+            {t('join.qqTitle')}
           </h3>
           <p
             class="font-sans text-sm text-gray-500 font-light text-center leading-relaxed"
           >
-            扫描二维码，加入 DeepLearner 官方 QQ
-            交流群，获取最新活动资讯与资源。
+            {t('join.qqDesc')}
           </p>
         </div>
 
@@ -91,12 +93,12 @@
           <h3
             class="font-display text-xl text-white mb-3 tracking-wide text-center"
           >
-            系统报名
+            {t('join.platformTitle')}
           </h3>
           <p
             class="font-sans text-sm text-gray-500 font-light text-center leading-relaxed"
           >
-            通过学校社团管理平台正式加入，享有完整社团成员权益。
+            {t('join.platformDesc')}
           </p>
         </div>
       </div>

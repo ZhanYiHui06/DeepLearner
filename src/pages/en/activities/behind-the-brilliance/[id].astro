@@ -1,0 +1,10 @@
+---
+import BrillianceSessionPage from '../../../../views/BrillianceSessionPage.astro';
+import data from '../../../../data/brilliance_archives.json';
+
+export function getStaticPaths() {
+  return data.map(item => ({ params: { id: item.id } }));
+}
+---
+
+<BrillianceSessionPage id={Astro.params.id} />

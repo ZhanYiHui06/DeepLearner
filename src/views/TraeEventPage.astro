@@ -1,0 +1,301 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { getLang, localizePath, useTranslations } from '../i18n';
+
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+
+const copy = {
+  zh: {
+    title: 'TRAE on Campus @南通大学',
+    lead: '让想法落地，见创造生长',
+    overviewTitle: '活动概况',
+    overview: '2026年5月16日，南通大学DeepLearner人工智能学习社联合字节跳动TRAE，于啬园校区举办"TRAE on Campus @南通大学 AI Coding Hackathon"活动。活动围绕AI Coding、Harness Engineering与Vibe Coding等前沿开发理念展开，涵盖技术分享、产品讲解、闪电开发、项目路演与专家评审等环节，吸引了来自不同学院、不同专业的近百位同学参与。',
+    talksTitle: '技术分享',
+    talk1: '活动开场，TRAE校园大使詹毅辉围绕Harness Engineering主题进行了实战经验分享。他以DeepLearner官方网站的开发实践为切入点，从需求梳理、功能设计到工程实现，完整还原了一个真实项目的推进过程，重点讲解了Harness开发在提升工程组织效率、优化开发流程与增强可维护性方面的实践价值。',
+    talk2: '随后，来自字节跳动TRAE的健行老师带来了关于TRAE产品特性与Vibe Coding实践的技术分享。他从AI辅助开发工具的真实使用场景出发，系统展示了TRAE在智能代码生成、项目理解与工程落地等方面的能力，并以多个成熟项目案例呈现了AI Coding工具在实际开发任务中的应用潜力。两场分享相互衔接，兼具方法论视角与实操参考。',
+    sprintTitle: '闪电开发',
+    sprint: '三小时闪电开发环节是活动的核心。同学们迅速进入状态，借助TRAE等工具推进项目构思与功能实现，现场专注而活跃。',
+    demoTitle: '项目路演',
+    demo: '开发结束后，10位同学依次上台路演，围绕作品背景、核心功能、技术路径与应用场景进行展示汇报。',
+    judgingTitle: '专家评审',
+    judging: '评审环节特邀南通大学人工智能与计算机学院李跃华教授与字节跳动TRAE春晓老师出席，从创新性、完成度、实用价值、技术实现与现场表达等维度进行综合评价，并为表现突出的同学颁发奖金。',
+    meaningTitle: '活动意义',
+    meaning: '本次活动为同学们搭建起接触行业工具、体验工程实践的场景，也促成了不同专业背景学生之间的技术碰撞。从案例学习到动手实践、从开发完成到走上台路演，整个流程让参与者对AI辅助编程的工程能力有了更直观的感受。未来，DeepLearner将持续联动校内外资源，围绕人工智能、智能编程与工程实践等方向开展高质量活动，为更多同学提供在真实场景中学习与成长的机会。',
+    altVenue: '活动现场',
+    altTalk: '技术分享',
+    altSprint: '闪电开发',
+    altDemo: '项目路演',
+    altJudging: '专家评审',
+  },
+  en: {
+    title: 'TRAE on Campus @ Nantong University',
+    lead: 'Turn ideas into reality, and watch creation grow',
+    overviewTitle: 'Overview',
+    overview: 'On May 16, 2026, the DeepLearner AI Learning Society of Nantong University teamed up with ByteDance’s TRAE to host “TRAE on Campus @ Nantong University: AI Coding Hackathon” on the Seyuan Campus. Built around cutting-edge development ideas such as AI Coding, Harness Engineering and Vibe Coding, the event featured tech talks, a product walkthrough, a lightning build sprint, project demos and expert judging, and drew nearly 100 students from a wide range of schools and majors.',
+    talksTitle: 'Tech Talks',
+    talk1: 'To open the event, TRAE Campus Ambassador Zhan Yihui shared hands-on lessons in Harness Engineering. Using the development of the DeepLearner website as a case study, he walked through the full life of a real project, from gathering requirements and designing features to engineering implementation, and highlighted how Harness-based development improves engineering organization, streamlines the workflow and makes code easier to maintain.',
+    talk2: 'Next, Jianxing from ByteDance’s TRAE gave a talk on TRAE’s product features and Vibe Coding in practice. Starting from real-world use cases of AI-assisted development tools, he systematically demonstrated TRAE’s strengths in intelligent code generation, project understanding and shipping production-ready work, and used several mature projects to show what AI coding tools can do in real development tasks. Together, the two talks offered both a methodological perspective and a practical reference.',
+    sprintTitle: 'Lightning Build Sprint',
+    sprint: 'The three-hour lightning build sprint was the heart of the event. Students quickly got into the zone, using TRAE and other tools to shape their ideas and build out features. The room was focused and buzzing with energy.',
+    demoTitle: 'Project Demos',
+    demo: 'When the sprint ended, 10 students took the stage one after another to present their work, covering the background, core features, technical approach and use cases of each project.',
+    judgingTitle: 'Expert Judging',
+    judging: 'The judging panel featured Professor Li Yuehua of the School of Artificial Intelligence and Computer Science at Nantong University and Chunxiao from ByteDance’s TRAE. They evaluated each project on innovation, completeness, practical value, technical implementation and presentation, and awarded cash prizes to the standout participants.',
+    meaningTitle: 'Why It Matters',
+    meaning: 'The event gave students hands-on access to industry tools and real engineering practice, and sparked technical exchange among students from different disciplines. From learning through case studies to building with their own hands, and from finishing a project to pitching it on stage, the whole process gave participants a much more concrete sense of what AI-assisted programming can do. Going forward, DeepLearner will keep bringing together resources on and off campus to host high-quality events on artificial intelligence, AI-powered programming and engineering practice, giving more students the chance to learn and grow in real-world settings.',
+    altVenue: 'Event venue',
+    altTalk: 'Tech talk',
+    altSprint: 'Lightning build sprint',
+    altDemo: 'Project demo',
+    altJudging: 'Expert judging',
+  },
+};
+const c = copy[lang];
+---
+
+<Layout title={`${c.title} — DeepLearner`}>
+  <Navbar />
+  <main class="w-full flex-grow">
+    
+    <!-- Hero Banner -->
+    <section class="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
+      <img fetchpriority="high" src="/images/activities/trae/1.jpg" alt={c.title} class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30"></div>
+      <div class="absolute inset-0 flex flex-col justify-end max-w-7xl mx-auto px-6 lg:px-12 pb-12 md:pb-16">
+        <a href={localizePath('/#activities', lang)} class="inline-flex items-center gap-2 font-mono text-sm text-gray-400 hover:text-white transition-colors mb-6 uppercase tracking-widest">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          {t('common.backActivities')}
+        </a>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="font-mono text-xs text-blue-400 uppercase tracking-widest px-3 py-1 border border-blue-400/30 bg-blue-400/10 backdrop-blur-md backdrop-saturate-150 shadow-[0_0_24px_rgba(96,165,250,0.16)]">
+            Special Event
+          </span>
+          <span class="font-mono text-xs text-gray-400">2026.5.16</span>
+        </div>
+        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-medium text-white tracking-tight">
+          {c.title}
+        </h1>
+        <p class="font-mono text-lg text-gray-300 mt-4 tracking-wider">
+          AI Coding Hackathon
+        </p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="w-full bg-black py-16 md:py-24">
+      <div class="max-w-4xl mx-auto px-6 lg:px-12">
+        
+        <!-- Lead description -->
+        <div class="border-l-2 border-blue-400/50 pl-6 mb-12">
+          <p class="text-xl md:text-2xl text-white font-normal font-sans leading-relaxed">
+            {c.lead}
+          </p>
+        </div>
+
+        <!-- Article Content -->
+        <article class="prose prose-invert prose-lg max-w-none
+          prose-headings:font-display prose-headings:font-medium prose-headings:tracking-tight
+          prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-12 prose-h2:mb-6
+          prose-p:text-gray-300 prose-p:font-light prose-p:leading-relaxed
+          prose-strong:text-white prose-strong:font-medium
+          prose-li:text-gray-300
+          prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
+        ">
+          <h2>{c.overviewTitle}</h2>
+          <p>
+            {c.overview}
+          </p>
+
+          <!-- Image after "近百位同学参与" -->
+          <div class="not-prose my-8">
+            <div class="image-carousel" data-images='["/images/activities/trae/1.jpg"]'>
+              <div class="relative overflow-hidden border border-white/10">
+                <img loading="lazy" decoding="async" src="/images/activities/trae/1.jpg" alt={c.altVenue} class="w-full object-contain" />
+              </div>
+            </div>
+          </div>
+
+          <h2>{c.talksTitle}</h2>
+          <p>
+            {c.talk1}
+          </p>
+
+          <!-- Image after "实践价值" -->
+          <div class="not-prose my-8">
+            <div class="image-carousel" data-images='["/images/activities/trae/2.jpg"]'>
+              <div class="relative overflow-hidden border border-white/10">
+                <img loading="lazy" decoding="async" src="/images/activities/trae/2.jpg" alt={c.altTalk} class="w-full object-contain" />
+              </div>
+            </div>
+          </div>
+
+          <p>
+            {c.talk2}
+          </p>
+
+          <!-- Image after "实操参考" -->
+          <div class="not-prose my-8">
+            <div class="image-carousel" data-images='["/images/activities/trae/3.jpg"]'>
+              <div class="relative overflow-hidden border border-white/10">
+                <img loading="lazy" decoding="async" src="/images/activities/trae/3.jpg" alt={c.altTalk} class="w-full object-contain" />
+              </div>
+            </div>
+          </div>
+
+          <h2>{c.sprintTitle}</h2>
+          <p>
+            {c.sprint}
+          </p>
+
+          <!-- Images after "专注而活跃" -->
+          <div class="not-prose my-8">
+            <div class="image-carousel" data-images='["/images/activities/trae/4.jpg","/images/activities/trae/5.jpg"]'>
+              <div class="relative overflow-hidden border border-white/10">
+                <img loading="lazy" decoding="async" src="/images/activities/trae/4.jpg" alt={c.altSprint} class="carousel-image w-full object-contain" />
+                <img loading="lazy" decoding="async" src="/images/activities/trae/5.jpg" alt={c.altSprint} class="carousel-image w-full object-contain absolute top-0 left-0 opacity-0" />
+              </div>
+              <div class="flex justify-center gap-2 mt-3">
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-colors active" data-index="0"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-colors" data-index="1"></button>
+              </div>
+            </div>
+          </div>
+
+          <h2>{c.demoTitle}</h2>
+          <p>
+            {c.demo}
+          </p>
+
+          <!-- Images after "展示汇报" -->
+          <div class="not-prose my-8">
+            <div class="image-carousel" data-images='["/images/activities/trae/6.jpg","/images/activities/trae/7.jpg","/images/activities/trae/8.jpg","/images/activities/trae/9.jpg","/images/activities/trae/10.jpg","/images/activities/trae/11.jpg","/images/activities/trae/12.jpg","/images/activities/trae/13.jpg"]'>
+              <div class="relative overflow-hidden border border-white/10">
+                <img loading="lazy" decoding="async" src="/images/activities/trae/6.jpg" alt={c.altDemo} class="carousel-image w-full object-contain" />
+                <img loading="lazy" decoding="async" src="/images/activities/trae/7.jpg" alt={c.altDemo} class="carousel-image w-full object-contain absolute top-0 left-0 opacity-0" />
+                <img loading="lazy" decoding="async" src="/images/activities/trae/8.jpg" alt={c.altDemo} class="carousel-image w-full object-contain absolute top-0 left-0 opacity-0" />
+                <img loading="lazy" decoding="async" src="/images/activities/trae/9.jpg" alt={c.altDemo} class="carousel-image w-full object-contain absolute top-0 left-0 opacity-0" />
+                <img loading="lazy" decoding="async" src="/images/activities/trae/10.jpg" alt={c.altDemo} class="carousel-image w-full object-contain absolute top-0 left-0 opacity-0" />
+                <img loading="lazy" decoding="async" src="/images/activities/trae/11.jpg" alt={c.altDemo} class="carousel-image w-full object-contain absolute top-0 left-0 opacity-0" />
+                <img loading="lazy" decoding="async" src="/images/activities/trae/12.jpg" alt={c.altDemo} class="carousel-image w-full object-contain absolute top-0 left-0 opacity-0" />
+                <img loading="lazy" decoding="async" src="/images/activities/trae/13.jpg" alt={c.altDemo} class="carousel-image w-full object-contain absolute top-0 left-0 opacity-0" />
+              </div>
+              <div class="flex justify-center gap-2 mt-3">
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-colors active" data-index="0"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-colors" data-index="1"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-colors" data-index="2"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-colors" data-index="3"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-colors" data-index="4"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-colors" data-index="5"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-colors" data-index="6"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-colors" data-index="7"></button>
+              </div>
+            </div>
+          </div>
+
+          <h2>{c.judgingTitle}</h2>
+          <p>
+            {c.judging}
+          </p>
+
+          <!-- Images after "颁发奖金" -->
+          <div class="not-prose my-8">
+            <div class="image-carousel" data-images='["/images/activities/trae/14.jpg","/images/activities/trae/15.jpg","/images/activities/trae/16.jpg","/images/activities/trae/17.jpg"]'>
+              <div class="relative overflow-hidden border border-white/10">
+                <img loading="lazy" decoding="async" src="/images/activities/trae/14.jpg" alt={c.altJudging} class="carousel-image w-full object-contain" />
+                <img loading="lazy" decoding="async" src="/images/activities/trae/15.jpg" alt={c.altJudging} class="carousel-image w-full object-contain absolute top-0 left-0 opacity-0" />
+                <img loading="lazy" decoding="async" src="/images/activities/trae/16.jpg" alt={c.altJudging} class="carousel-image w-full object-contain absolute top-0 left-0 opacity-0" />
+                <img loading="lazy" decoding="async" src="/images/activities/trae/17.jpg" alt={c.altJudging} class="carousel-image w-full object-contain absolute top-0 left-0 opacity-0" />
+              </div>
+              <div class="flex justify-center gap-2 mt-3">
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-colors active" data-index="0"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-colors" data-index="1"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-colors" data-index="2"></button>
+                <button class="carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-colors" data-index="3"></button>
+              </div>
+            </div>
+          </div>
+
+          <h2>{c.meaningTitle}</h2>
+          <p>
+            {c.meaning}
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+
+  document.addEventListener('astro:page-load', () => {
+    const carousels = document.querySelectorAll('.image-carousel');
+    
+    carousels.forEach(carousel => {
+      const images = carousel.querySelectorAll('.carousel-image');
+      const dots = carousel.querySelectorAll('.carousel-dot');
+      
+      if (images.length <= 1) return;
+      
+      let currentIndex = 0;
+      let interval;
+      
+      function showImage(index) {
+        images.forEach((img, i) => {
+          gsap.to(img, { 
+            opacity: i === index ? 1 : 0, 
+            duration: 0.5, 
+            ease: 'power2.inOut' 
+          });
+        });
+        
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+          dot.classList.toggle('bg-white', i === index);
+          dot.classList.toggle('bg-white/30', i !== index);
+        });
+        
+        currentIndex = index;
+      }
+      
+      function nextImage() {
+        const next = (currentIndex + 1) % images.length;
+        showImage(next);
+      }
+      
+      function startAutoPlay() {
+        interval = setInterval(nextImage, 3000);
+      }
+      
+      function stopAutoPlay() {
+        clearInterval(interval);
+      }
+      
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          const index = parseInt(dot.dataset.index);
+          stopAutoPlay();
+          showImage(index);
+          startAutoPlay();
+        });
+      });
+      
+      carousel.addEventListener('mouseenter', stopAutoPlay);
+      carousel.addEventListener('mouseleave', startAutoPlay);
+      
+      startAutoPlay();
+    });
+  });
+</script>
+
+<style>
+  .carousel-dot.active {
+    background-color: white;
+  }
+</style>

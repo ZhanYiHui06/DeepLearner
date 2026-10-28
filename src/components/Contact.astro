@@ -1,5 +1,10 @@
 ---
-import team from '../data/team.json';
+import teamData from '../data/team.json';
+import { getLang, pick, useTranslations } from '../i18n';
+
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const team = teamData.map(m => pick(m, lang));
 ---
 
 <section id="contact" class="w-full bg-[#050505] py-24 md:py-36 border-t border-white/5">
@@ -10,7 +15,7 @@ import team from '../data/team.json';
         [ 06 — Contact ]
       </span>
       <h2 class="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-white">
-        联系我们
+        {t('contact.heading')}
       </h2>
     </div>
 

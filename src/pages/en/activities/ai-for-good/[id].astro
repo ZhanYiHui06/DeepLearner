@@ -1,0 +1,10 @@
+---
+import AiForGoodSessionPage from '../../../../views/AiForGoodSessionPage.astro';
+import data from '../../../../data/ai-for-good_archives.json';
+
+export function getStaticPaths() {
+  return data.map(item => ({ params: { id: item.id } }));
+}
+---
+
+<AiForGoodSessionPage id={Astro.params.id} />

@@ -1,12 +1,20 @@
 ---
+import { getLang, languages, localizePath, stripLang, useTranslations } from '../i18n';
+
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const otherLang = lang === 'zh' ? 'en' : 'zh';
+// 切换到另一种语言时停留在同一页面
+const switchHref = localizePath(stripLang(Astro.url.pathname), otherLang);
+
 const links = [
-  { name: '关于', href: '/#about' },
-  { name: '活动', href: '/#activities' },
-  { name: '影像', href: '/#gallery' },
-  { name: '伙伴', href: '/#partners' },
-  { name: '加入', href: '/#join' },
-  { name: '联系', href: '/#contact' },
-];
+  { name: t('nav.about'), href: '/#about' },
+  { name: t('nav.activities'), href: '/#activities' },
+  { name: t('nav.gallery'), href: '/#gallery' },
+  { name: t('nav.partners'), href: '/#partners' },
+  { name: t('nav.join'), href: '/#join' },
+  { name: t('nav.contact'), href: '/#contact' },
+].map((link) => ({ ...link, href: localizePath(link.href, lang) }));
 ---
 
 <header 
@@ -15,7 +23,7 @@ const links = [
 >
   <div class="max-w-7xl mx-auto px-8 md:px-12 h-16 md:h-20 flex items-center justify-between">
     <!-- Logo area -->
-    <a href="/" class="flex items-center gap-3 group" aria-label="返回首页">
+    <a href={localizePath('/', lang)} class="flex items-center gap-3 group" aria-label={t('nav.home')}>
       <!-- Fallback styling for logo text if image is missing -->
       <div class="font-display font-semibold text-xl tracking-wider uppercase">
         <span class="sr-only">DeepLearner</span>
@@ -29,31 +37,51 @@ const links = [
       </div>
     </a>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center gap-8">
-      {links.map((link) => (
-        <a 
-          href={link.href} 
-          class="font-sans text-sm font-light text-gray-300 hover:text-white transition-colors relative group"
-        >
-          {link.name}
-          <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
-        </a>
-      ))}
-    </nav>
+    <div class="flex items-center gap-3 md:gap-0">
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        {links.map((link) => (
+          <a 
+            href={link.href} 
+            class="font-sans text-sm font-light text-gray-300 hover:text-white transition-colors relative group"
+          >
+            {link.name}
+            <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        ))}
+      </nav>
 
-    <!-- Mobile Menu Toggle -->
-    <button 
-      id="mobile-menu-toggle" 
-      class="md:hidden text-white p-2 focus:outline-none"
-      aria-label="Toggle Navigation"
-    >
-      <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
-        <line class="line-1" x1="4" x2="20" y1="6" y2="6"></line>
-        <line class="line-2" x1="4" x2="20" y1="12" y2="12"></line>
-        <line class="line-3" x1="4" x2="20" y1="18" y2="18"></line>
-      </svg>
-    </button>
+      <!-- Language Switch -->
+      <a
+        href={switchHref}
+        data-base-href={switchHref}
+        hreflang={languages[otherLang].htmlLang}
+        lang={languages[otherLang].htmlLang}
+        aria-label={t('nav.switchLabel')}
+        title={t('nav.switchLabel')}
+        class="lang-switch md:ml-8 inline-flex items-center gap-1.5 font-mono text-xs tracking-widest uppercase text-gray-300 border border-white/20 px-3 py-1.5 hover:bg-white hover:text-black hover:border-white transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span>{languages[otherLang].label}</span>
+      </a>
+
+      <!-- Mobile Menu Toggle -->
+      <button 
+        id="mobile-menu-toggle" 
+        class="md:hidden text-white p-2 focus:outline-none"
+        aria-label="Toggle Navigation"
+      >
+        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+          <line class="line-1" x1="4" x2="20" y1="6" y2="6"></line>
+          <line class="line-2" x1="4" x2="20" y1="12" y2="12"></line>
+          <line class="line-3" x1="4" x2="20" y1="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
   </div>
 
   <!-- Mobile Nav Dropdown -->
@@ -139,6 +167,13 @@ const links = [
     }
 
     toggle?.addEventListener('click', toggleMenu);
+
+    // 切换语言时带上当前所在的区块锚点（如 #partners），切换后停在同一位置
+    document.querySelectorAll<HTMLAnchorElement>('.lang-switch').forEach(link => {
+      link.addEventListener('click', () => {
+        link.href = (link.dataset.baseHref || link.href) + location.hash;
+      });
+    });
 
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {

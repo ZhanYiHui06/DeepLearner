@@ -3,42 +3,72 @@
     "name": "AMD（中国）",
     "logo": "/images/partners/AMD.png",
     "desc": "全球领先的半导体公司，专注于高性能 CPU、GPU 及自适应计算产品，旗下 Ryzen、EPYC 和 Radeon 系列广泛应用于 PC、数据中心与 AI 计算领域。",
-    "link": "https://www.amd.com/zh-cn.html"
+    "link": "https://www.amd.com/zh-cn.html",
+    "en": {
+      "name": "AMD (China)",
+      "desc": "A global semiconductor leader focused on high-performance CPUs, GPUs and adaptive computing. Its Ryzen, EPYC and Radeon product lines are widely used in PCs, data centers and AI computing.",
+      "link": "https://www.amd.com/en.html"
+    }
   },
   {
     "name": "科大讯飞",
     "logo": "/images/partners/kedaxunfei.png",
     "desc": "中国人工智能头部企业，深耕语音识别、自然语言处理与认知智能技术，旗下讯飞星火大模型已在教育、医疗、办公等多个垂直场景实现规模化落地。",
-    "link": "https://www.iflytek.com/cn/"
+    "link": "https://www.iflytek.com/cn/",
+    "en": {
+      "name": "iFLYTEK",
+      "desc": "A leading Chinese AI company specializing in speech recognition, natural language processing and cognitive intelligence. Its iFLYTEK Spark large model has been deployed at scale in education, healthcare, office work and other industries.",
+      "link": "https://www.iflytek.com/en/"
+    }
   },
   {
     "name": "中天科技",
     "logo": "/images/partners/zhontian.png",
     "desc": "国内领先的综合型线缆与能源互联网企业，产品覆盖光纤光缆、海洋工程、新能源等领域，总部位于南通，是江苏省制造业龙头之一。",
-    "link": "https://www.ztt.cn/"
+    "link": "https://www.ztt.cn/",
+    "en": {
+      "name": "ZTT (Zhongtian Technology)",
+      "desc": "A leading Chinese manufacturer of cables and energy internet solutions, with products spanning optical fiber and cable, marine engineering and new energy. Headquartered in Nantong, it is one of Jiangsu Province’s leading manufacturers."
+    }
   },
   {
     "name": "字节跳动",
     "logo": "/images/partners/bytedance.png",
     "desc": "全球领先的科技公司，旗下拥有抖音、TikTok、今日头条、TRAE等多款现象级产品，在人工智能、推荐算法和内容分发领域处于行业前沿。",
-    "link": "https://www.bytedance.com/"
+    "link": "https://www.bytedance.com/",
+    "en": {
+      "name": "ByteDance",
+      "desc": "A global technology leader behind breakout products such as Douyin, TikTok, Toutiao and TRAE, at the forefront of artificial intelligence, recommendation algorithms and content distribution."
+    }
   },
   {
     "name": "上海人工智能实验室",
     "logo": "/images/partners/shailab.png",
     "desc": "我国人工智能领域的新型科研机构，开展战略性、原创性、前瞻性的科学研究与技术攻关，推出了书生（InternLM）系列开源大模型，致力于打造开放共享的 AI 研究生态。",
-    "link": "https://www.shlab.org.cn/"
+    "link": "https://www.shlab.org.cn/",
+    "en": {
+      "name": "Shanghai Artificial Intelligence Laboratory",
+      "desc": "A new type of research institution in China’s AI field that pursues strategic, original and forward-looking research and breakthroughs in key technologies. It created the InternLM series of open-source large models and is committed to building an open, shared AI research ecosystem."
+    }
   },
   {
     "name": "美团",
     "logo": "/images/partners/meituan.png",
     "desc": "中国领先的生活服务电子商务平台，业务覆盖外卖、到店、酒旅、即时零售等数百个生活场景，并持续投入大模型、自动配送与无人机等 AI 技术研发。",
-    "link": "https://www.meituan.com/"
+    "link": "https://www.meituan.com/",
+    "en": {
+      "name": "Meituan",
+      "desc": "China’s leading e-commerce platform for local services, covering hundreds of everyday scenarios including food delivery, in-store dining, hotels and travel, and instant retail, while continuing to invest in AI research such as large models, autonomous delivery and drones."
+    }
   },
   {
     "name": "观猹",
     "logo": "/images/partners/watcha.png",
     "desc": "专注 AI 产品的发现与点评社区，汇聚开发者和用户对各类 AI 工具的真实体验与评测，帮助大家更快找到好用的 AI 产品。",
-    "link": "https://watcha.cn/"
+    "link": "https://watcha.cn/",
+    "en": {
+      "name": "Watcha",
+      "desc": "A community for discovering and reviewing AI products, bringing together real hands-on experiences and reviews from developers and users to help everyone find great AI tools faster."
+    }
   }
 ]

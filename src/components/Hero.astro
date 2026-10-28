@@ -1,4 +1,8 @@
 ---
+import { getLang, useTranslations } from '../i18n';
+
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
 const bgImage = "url('/images/hero/landing_bg2.jpg')";
 ---
 
@@ -30,7 +34,7 @@ const bgImage = "url('/images/hero/landing_bg2.jpg')";
         <span>DeepLearner</span><br />
         <span
           class="block mt-2 text-white"
-          >人工智能学习社</span
+          >{t('site.name')}</span
         >
       </h1>
 
@@ -45,12 +49,12 @@ const bgImage = "url('/images/hero/landing_bg2.jpg')";
         <p
           class="text-lg md:text-2xl font-light tracking-widest text-gray-200 mb-2"
         >
-          永不停止前进的步伐
+          {t('slogan.main')}
         </p>
         <p
           class="text-base md:text-lg font-light tracking-widest text-white/70 uppercase"
         >
-          Unstoppable. Always Forward.
+          {t('slogan.sub')}
         </p>
       </div>
     </div>
