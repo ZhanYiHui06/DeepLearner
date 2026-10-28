@@ -4,27 +4,39 @@
     "enTitle": "Behind the Brilliance",
     "image": "/images/activities/activity_1.jpg",
     "desc": "邀请校内外优秀的实践者、创业者与研究者，分享他们在 AI 领域真实走过的路——不只是高光时刻，更是背后那些笨拙、迷茫与突破的过程。",
-    "slug": "behind-the-brilliance"
+    "slug": "behind-the-brilliance",
+    "en": {
+      "desc": "We invite outstanding practitioners, founders and researchers from on and off campus to share the real paths they have taken in AI: not just the highlights, but the clumsy, confusing moments and the breakthroughs behind them."
+    }
   },
   {
     "cnTitle": "造物工坊",
     "enTitle": "Creation Workshop",
     "image": "/images/activities/activity_2.jpg",
     "desc": "手把手教你快速上手一项新技术、新项目。每期聚焦一个主题，从零开始，带你搭建一个小作品，真正学以致用。",
-    "slug": "creation-workshop"
+    "slug": "creation-workshop",
+    "en": {
+      "desc": "Hands-on sessions that get you up to speed with a new technology or project fast. Each session focuses on one theme and takes you from zero to a small working project, so you can put what you learn into practice."
+    }
   },
   {
     "cnTitle": "人工智能挑战赛",
     "enTitle": "DeepLearner Challenge",
     "image": "/images/activities/activity_3.jpg",
     "desc": "DeepLearner 年度算法挑战赛，面向南通大学全体学生开放组队参赛。用生产问题检验真实能力，在协作与竞争中找到自己的边界。",
-    "slug": "challenge"
+    "slug": "challenge",
+    "en": {
+      "desc": "DeepLearner’s annual algorithm challenge, open to teams from across Nantong University. Real-world production problems put your skills to the test, and through collaboration and competition you find out where your limits are."
+    }
   },
   {
     "cnTitle": "有 AI 公益行",
     "enTitle": "DeepLearner AI for Good",
     "image": "/images/activities/activity_4.jpg",
     "desc": "我们走进社区、学校与乡村，用 AI 做一点有意义的事。技术不是终点，让更多人受益才是。",
-    "slug": "ai-for-good"
+    "slug": "ai-for-good",
+    "en": {
+      "desc": "We go into communities, schools and villages to do something meaningful with AI. Technology isn’t the end goal; helping more people benefit from it is."
+    }
   }
 ]

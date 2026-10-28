@@ -1,0 +1,10 @@
+---
+import WorkshopSessionPage from '../../../../views/WorkshopSessionPage.astro';
+import data from '../../../../data/creation_workshop_archives.json';
+
+export function getStaticPaths() {
+  return data.map(item => ({ params: { id: item.id } }));
+}
+---
+
+<WorkshopSessionPage id={Astro.params.id} />

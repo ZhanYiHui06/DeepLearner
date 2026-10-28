@@ -3,48 +3,80 @@
     "img": "/images/team/wangjin.jpg",
     "name": "王进",
     "role": "指导老师",
-    "contact": "Email: wj@ntu.edu.cn"
+    "contact": "Email: wj@ntu.edu.cn",
+    "en": {
+      "name": "Wang Jin",
+      "role": "Faculty Advisor"
+    }
   },
   {
     "img": "/images/team/zhanyihui.jpg",
     "name": "詹毅辉",
     "role": "社长",
-    "contact": "QQ: 2022420355"
+    "contact": "QQ: 2022420355",
+    "en": {
+      "name": "Zhan Yihui",
+      "role": "President"
+    }
   },
   {
     "img": "/images/team/sunyuxin.jpg",
     "name": "孙雨欣",
     "role": "团支书",
-    "contact": "QQ: 2246897964"
+    "contact": "QQ: 2246897964",
+    "en": {
+      "name": "Sun Yuxin",
+      "role": "Secretary"
+    }
   },
   {
     "img": "/images/team/lijincheng.jpg",
     "name": "理锦诚",
     "role": "活跃社员",
-    "contact": "QQ: 435019141"
+    "contact": "QQ: 435019141",
+    "en": {
+      "name": "Li Jincheng",
+      "role": "Active Member"
+    }
   },
   {
     "img": "/images/team/wuronhon.jpg",
     "name": "吴戎弘",
     "role": "活跃社员",
-    "contact": "QQ: 2675786440"
+    "contact": "QQ: 2675786440",
+    "en": {
+      "name": "Wu Ronghong",
+      "role": "Active Member"
+    }
   },
   {
     "img": "/images/team/mouwensheng.jpg",
     "name": "牟文胜",
     "role": "活跃社员",
-    "contact": "QQ: 3191854280"
+    "contact": "QQ: 3191854280",
+    "en": {
+      "name": "Mou Wensheng",
+      "role": "Active Member"
+    }
   },
   {
     "img": "/images/team/wangningbo.jpg",
     "name": "王宁博",
     "role": "活跃社员",
-    "contact": "QQ: 2475993306"
+    "contact": "QQ: 2475993306",
+    "en": {
+      "name": "Wang Ningbo",
+      "role": "Active Member"
+    }
   },
   {
     "img": "/images/team/chaoyu.jpg",
     "name": "晁宇",
     "role": "活跃社员",
-    "contact": "QQ: 1685697466"
+    "contact": "QQ: 1685697466",
+    "en": {
+      "name": "Chao Yu",
+      "role": "Active Member"
+    }
   }
 ]

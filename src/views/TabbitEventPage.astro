@@ -1,0 +1,273 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { getLang, localizePath, useTranslations } from '../i18n';
+
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+
+const img = (n: number) => `/images/activities/tabbit/${n}.jpg`;
+const roadshow = [4, 5, 6, 7, 8].map(img);
+const awards = [9, 10, 11].map(img);
+
+const copy = {
+  zh: {
+    title: '美团 Tabbit 高校妙招大赛@南通大学',
+    lead: '用 Tabbit 浏览器搭建你的专属 AI 工作流',
+    overviewTitle: '活动概况',
+    overview: '2026年6月14日，南通大学DeepLearner人工智能学习社联合美团Tabbit团队，举办"美团 Tabbit 高校妙招大赛@南通大学"活动。活动以"用 Tabbit 浏览器搭建你的专属 AI 工作流"为主题，倡导"不会代码，也能做 Skill"，邀请同学们把学习、科研、实习与日常生活中的真实需求，沉淀为可以反复调用的AI妙招。活动涵盖选题讲解、现场创作、妙招路演与颁奖合影等环节，吸引了来自不同学院、不同专业的同学参与。',
+    briefingTitle: '选题讲解',
+    briefing: '活动开场，Tabbit团队介绍了Tabbit浏览器的核心能力与"妙招"的创作方式，并发布了本次大赛的选题方向。选题围绕查资料、写作业、找实习、做选题等大学生高频场景展开，鼓励同学们从自己的真实痛点出发，而不是为了做工具而做工具。',
+    creationTitle: '现场创作',
+    creation: '选题发布后，同学们随即进入现场创作环节，借助Tabbit浏览器梳理需求、编排流程、调试妙招，Tabbit团队成员也在现场穿梭答疑。整个教室安静而专注，一个个想法逐渐变成了可运行的AI工作流。',
+    demoTitle: '妙招路演',
+    demo: '创作结束后，参赛同学依次上台演示自己的妙招。作品方向丰富多样：有把盘前复盘、消息解读与条件计划串成一条流程的A股盘前交易助手，有从Web of Science检索、筛选到生成文献脉络与写作辅助报告的文献工作流，有把散落在浏览器中的论文、PDF与项目主页整理成组会汇报页面的论文组会汇报生成器，有覆盖抖音、视频号、小红书、哔哩哔哩与快手五大平台数据的爆款复盘官，也有面向加密货币市场的量化分析妙招。每一个作品都来自同学们真实的学习与生活场景。',
+    awardsTitle: '颁奖时刻',
+    awards: '路演结束后，大赛综合作品的实用价值、完成度与现场表达评选出各类奖项，共评出最会使招奖1名、优秀妙招奖2名与潜力妙招奖5名，并为获奖同学颁发奖金。',
+    meaningTitle: '活动意义',
+    meaning: '本次活动让同学们看到，AI工具的价值不只属于会写代码的人。从发现问题、拆解流程到把方法沉淀为可复用的妙招，参与者在一个下午里完整体验了"把想法变成工具"的过程，也在路演交流中看到了不同专业视角下AI应用的更多可能。未来，DeepLearner将继续联动校内外资源，围绕人工智能工具与实践应用开展更多活动，让更多同学在真实场景中用好AI。',
+    altVenue: '活动现场',
+    altBriefing: '选题讲解',
+    altCreation: '现场创作',
+    altDemo: '妙招路演',
+    altAwards: '颁奖时刻',
+    altGroup: '集体合影',
+  },
+  en: {
+    title: 'Meituan Tabbit Campus Skill Contest @ Nantong University',
+    lead: 'Build your own AI workflow with the Tabbit browser',
+    overviewTitle: 'Overview',
+    overview: 'On June 14, 2026, DeepLearner Club of Nantong University teamed up with Meituan’s Tabbit team to host the “Meituan Tabbit Campus Skill Contest @ Nantong University.” Themed “Build your own AI workflow with the Tabbit browser” and championing the idea that “you can build a Skill without writing code,” the contest invited students to turn real needs from their studies, research, internships and everyday lives into AI Skills they can use again and again. The program included a topic briefing, live creation, Skill demos, and an awards ceremony with a group photo, and attracted students from a wide range of schools and majors.',
+    briefingTitle: 'Topic Briefing',
+    briefing: 'To kick things off, the Tabbit team introduced the browser’s core capabilities and how to create a “Skill,” then announced the contest’s topic directions. The topics centered on everyday student scenarios such as looking up information, doing homework, finding internships and choosing research topics, encouraging participants to start from their own real pain points rather than building tools for the sake of it.',
+    creationTitle: 'Live Creation',
+    creation: 'Once the topics were announced, students dove straight into live creation, using the Tabbit browser to map out requirements, orchestrate workflows and debug their Skills, while Tabbit team members moved around the room answering questions. The classroom was quiet and focused as one idea after another turned into a working AI workflow.',
+    demoTitle: 'Skill Demos',
+    demo: 'When time was up, participants took turns presenting their Skills on stage, and the range of ideas was impressive: an A-share pre-market trading assistant that chains pre-market review, news interpretation and conditional plans into a single flow; a literature workflow that goes from searching and screening on Web of Science to generating a map of the research landscape and a writing-support report; a group-meeting presentation generator that turns papers, PDFs and project pages scattered across the browser into a ready-to-present page; a viral-content analyst covering data from five major platforms, namely Douyin, WeChat Channels, Xiaohongshu, Bilibili and Kuaishou; and a quantitative analysis Skill for the cryptocurrency market. Every project grew out of students’ real study and life scenarios.',
+    awardsTitle: 'Awards',
+    awards: 'After the demos, entries were judged on practical value, completeness and presentation. The contest named 1 Skill Master Award, 2 Excellent Skill Awards and 5 Promising Skill Awards, and presented cash prizes to the winners.',
+    meaningTitle: 'Why It Matters',
+    meaning: 'The contest showed students that the value of AI tools isn’t reserved for people who can code. From spotting a problem and breaking down the process to distilling a method into a reusable Skill, participants experienced the full journey of “turning an idea into a tool” in a single afternoon, and the demos revealed even more possibilities for AI through the lens of different disciplines. Going forward, DeepLearner will keep bringing together resources on and off campus to host more events on AI tools and real-world applications, helping more students put AI to good use.',
+    altVenue: 'Event venue',
+    altBriefing: 'Topic briefing',
+    altCreation: 'Live creation',
+    altDemo: 'Skill demos',
+    altAwards: 'Awards ceremony',
+    altGroup: 'Group photo',
+  },
+};
+const c = copy[lang];
+---
+
+<Layout title={`${c.title} — DeepLearner`}>
+  <Navbar />
+  <main class="w-full flex-grow">
+
+    <!-- Hero Banner -->
+    <section class="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
+      <img fetchpriority="high" src={img(12)} alt={c.title} class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30"></div>
+      <div class="absolute inset-0 flex flex-col justify-end max-w-7xl mx-auto px-6 lg:px-12 pb-12 md:pb-16">
+        <a href={localizePath('/#activities', lang)} class="inline-flex items-center gap-2 font-mono text-sm text-gray-400 hover:text-white transition-colors mb-6 uppercase tracking-widest">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          {t('common.backActivities')}
+        </a>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="font-mono text-xs text-blue-400 uppercase tracking-widest px-3 py-1 border border-blue-400/30 bg-blue-400/10 backdrop-blur-md backdrop-saturate-150 shadow-[0_0_24px_rgba(96,165,250,0.16)]">
+            Special Event
+          </span>
+          <span class="font-mono text-xs text-gray-400">2026.6.14</span>
+        </div>
+        <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-medium text-white tracking-tight">
+          {c.title}
+        </h1>
+        <p class="font-mono text-lg text-gray-300 mt-4 tracking-wider">
+          AI Skill Workshop
+        </p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="w-full bg-black py-16 md:py-24">
+      <div class="max-w-4xl mx-auto px-6 lg:px-12">
+
+        <!-- Lead description -->
+        <div class="border-l-2 border-blue-400/50 pl-6 mb-12">
+          <p class="text-xl md:text-2xl text-white font-normal font-sans leading-relaxed">
+            {c.lead}
+          </p>
+        </div>
+
+        <!-- Article Content -->
+        <article class="prose prose-invert prose-lg max-w-none
+          prose-headings:font-display prose-headings:font-medium prose-headings:tracking-tight
+          prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-12 prose-h2:mb-6
+          prose-p:text-gray-300 prose-p:font-light prose-p:leading-relaxed
+          prose-strong:text-white prose-strong:font-medium
+          prose-li:text-gray-300
+          prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
+        ">
+          <h2>{c.overviewTitle}</h2>
+          <p>
+            {c.overview}
+          </p>
+
+          <div class="not-prose my-8">
+            <div class="relative overflow-hidden border border-white/10">
+              <img loading="lazy" decoding="async" src={img(1)} alt={c.altVenue} class="w-full object-contain" />
+            </div>
+          </div>
+
+          <h2>{c.briefingTitle}</h2>
+          <p>
+            {c.briefing}
+          </p>
+
+          <div class="not-prose my-8">
+            <div class="relative overflow-hidden border border-white/10">
+              <img loading="lazy" decoding="async" src={img(2)} alt={c.altBriefing} class="w-full object-contain" />
+            </div>
+          </div>
+
+          <h2>{c.creationTitle}</h2>
+          <p>
+            {c.creation}
+          </p>
+
+          <div class="not-prose my-8">
+            <div class="relative overflow-hidden border border-white/10">
+              <img loading="lazy" decoding="async" src={img(3)} alt={c.altCreation} class="w-full object-contain" />
+            </div>
+          </div>
+
+          <h2>{c.demoTitle}</h2>
+          <p>
+            {c.demo}
+          </p>
+
+          <div class="not-prose my-8">
+            <div class="image-carousel">
+              <div class="relative overflow-hidden border border-white/10">
+                {roadshow.map((src, i) => (
+                  <img loading="lazy" decoding="async" src={src} alt={c.altDemo} class={`carousel-image w-full object-contain${i > 0 ? ' absolute top-0 left-0 opacity-0' : ''}`} />
+                ))}
+              </div>
+              <div class="flex justify-center gap-2 mt-3">
+                {roadshow.map((_, i) => (
+                  <button class={`carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-colors${i === 0 ? ' active' : ''}`} data-index={i}></button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <h2>{c.awardsTitle}</h2>
+          <p>
+            {c.awards}
+          </p>
+
+          <div class="not-prose my-8">
+            <div class="image-carousel">
+              <div class="relative overflow-hidden border border-white/10">
+                {awards.map((src, i) => (
+                  <img loading="lazy" decoding="async" src={src} alt={c.altAwards} class={`carousel-image w-full object-contain${i > 0 ? ' absolute top-0 left-0 opacity-0' : ''}`} />
+                ))}
+              </div>
+              <div class="flex justify-center gap-2 mt-3">
+                {awards.map((_, i) => (
+                  <button class={`carousel-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-colors${i === 0 ? ' active' : ''}`} data-index={i}></button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <h2>{c.meaningTitle}</h2>
+          <p>
+            {c.meaning}
+          </p>
+
+          <div class="not-prose my-8">
+            <div class="relative overflow-hidden border border-white/10">
+              <img loading="lazy" decoding="async" src={img(12)} alt={c.altGroup} class="w-full object-contain" />
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+
+  let timers: ReturnType<typeof setInterval>[] = [];
+
+  document.addEventListener('astro:page-load', () => {
+    const carousels = document.querySelectorAll('.image-carousel');
+
+    carousels.forEach(carousel => {
+      const images = carousel.querySelectorAll('.carousel-image');
+      const dots = carousel.querySelectorAll<HTMLElement>('.carousel-dot');
+
+      if (images.length <= 1) return;
+
+      let currentIndex = 0;
+      let interval: ReturnType<typeof setInterval> | undefined;
+
+      function showImage(index: number) {
+        images.forEach((img, i) => {
+          gsap.to(img, {
+            opacity: i === index ? 1 : 0,
+            duration: 0.5,
+            ease: 'power2.inOut'
+          });
+        });
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+          dot.classList.toggle('bg-white', i === index);
+          dot.classList.toggle('bg-white/30', i !== index);
+        });
+
+        currentIndex = index;
+      }
+
+      function startAutoPlay() {
+        interval = setInterval(() => showImage((currentIndex + 1) % images.length), 3000);
+        timers.push(interval);
+      }
+
+      function stopAutoPlay() {
+        clearInterval(interval);
+      }
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          stopAutoPlay();
+          showImage(parseInt(dot.dataset.index || '0', 10));
+          startAutoPlay();
+        });
+      });
+
+      carousel.addEventListener('mouseenter', stopAutoPlay);
+      carousel.addEventListener('mouseleave', startAutoPlay);
+
+      startAutoPlay();
+    });
+  });
+
+  // 切页时停掉轮播计时器，避免在其他页面继续空转
+  document.addEventListener('astro:before-swap', () => {
+    timers.forEach(clearInterval);
+    timers = [];
+  });
+</script>
+
+<style>
+  .carousel-dot.active {
+    background-color: white;
+  }
+</style>

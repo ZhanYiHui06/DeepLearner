@@ -1,5 +1,10 @@
 ---
-import partners from '../data/partners.json';
+import partnersData from '../data/partners.json';
+import { getLang, pick, useTranslations } from '../i18n';
+
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const partners = partnersData.map(p => pick(p, lang));
 ---
 
 <section id="partners" class="w-full bg-black py-24 md:py-36 border-t-2 border-white/10">
@@ -11,7 +16,7 @@ import partners from '../data/partners.json';
         [ 04 — Partners ]
       </span>
       <h2 class="font-display text-4xl sm:text-5xl font-semibold text-white tracking-tight">
-        企业联系
+        {t('partners.heading')}
       </h2>
     </div>
 

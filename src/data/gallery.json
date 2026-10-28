@@ -3,120 +3,180 @@
     "img": "/images/activities/trae/19.jpg",
     "title": "TRAE on Campus @南通大学",
     "date": "2026.5.16",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "TRAE on Campus @ Nantong University"
+    }
   },
   {
     "img": "/images/activities/trae/1.jpg",
     "title": "TRAE on Campus @南通大学",
     "date": "2026.5.16",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "TRAE on Campus @ Nantong University"
+    }
   },
   {
     "img": "/images/gallery/gallery_2.jpg",
     "title": "闪光点背后的故事·第一期",
     "date": "2025.9.14",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "Behind the Brilliance · Session 1"
+    }
   },
   {
     "img": "/images/gallery/gallery_1.jpg",
     "title": "闪光点背后的故事·第二期",
     "date": "2025.10.14",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "Behind the Brilliance · Session 2"
+    }
   },
   {
     "img": "/images/gallery/gallery_8.jpg",
     "title": "闪光点背后的故事·第三期",
     "date": "2025.11.12",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "Behind the Brilliance · Session 3"
+    }
   },
   {
     "img": "/images/gallery/gallery_3.jpg",
     "title": "闪光点背后的故事·第四期",
     "date": "2026.3.9",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "Behind the Brilliance · Session 4"
+    }
   },
   {
     "img": "/images/gallery/gallery_13.jpg",
     "title": "闪光点背后的故事·第五期",
     "date": "2026.5.19",
-    "featured": false
+    "featured": false,
+    "en": {
+      "title": "Behind the Brilliance · Session 5"
+    }
   },
   {
     "img": "/images/gallery/gallery_14.jpg",
     "title": "闪光点背后的故事·特别专辑（线上）",
     "date": "2026.9.22",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "Behind the Brilliance · Special Edition (Online)"
+    }
   },
   {
     "img": "/images/gallery/gallery_4.jpg",
     "title": "有AI公益行·南通老年大学篇",
     "date": "2025.5.21",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "AI for Good · Nantong University for the Elderly"
+    }
   },
   {
     "img": "/images/gallery/gallery_5.jpg",
     "title": "赴科大讯飞苏州研究院研学",
     "date": "2025.5.13",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "Study Visit to iFLYTEK Suzhou Research Institute"
+    }
   },
   {
     "img": "/images/gallery/gallery_6.jpg",
     "title": "2025年百团大战",
     "date": "2025.10.12",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "2025 Club Recruitment Fair"
+    }
   },
   {
     "img": "/images/gallery/gallery_7.jpg",
     "title": "2025年百团大战",
     "date": "2025.10.12",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "2025 Club Recruitment Fair"
+    }
   },
   {
     "img": "/images/gallery/gallery_9.jpg",
     "title": "三社联动科技嘉年华",
     "date": "2025.11.2",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "Three-Club Joint Tech Carnival"
+    }
   },
   {
     "img": "/images/gallery/gallery_10.jpg",
     "title": "第一届人工智能挑战赛",
     "date": "2025.11.7",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "The 1st DeepLearner Challenge"
+    }
   },
   {
     "img": "/images/gallery/gallery_11.jpg",
     "title": "全国三维数字化创新设计大赛暨科技文化节",
     "date": "2026.3.21",
-    "featured": false
+    "featured": false,
+    "en": {
+      "title": "National 3D Digital Innovation Design Competition & Science and Technology Festival"
+    }
   },
   {
     "img": "/images/gallery/gallery_12.jpg",
     "title": "全国三维数字化创新设计大赛暨科技文化节",
     "date": "2026.3.21",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "National 3D Digital Innovation Design Competition & Science and Technology Festival"
+    }
   },
   {
     "img": "/images/activities/trae/18.jpg",
     "title": "TRAE on Campus @南通大学",
     "date": "2026.5.16",
-    "featured": false
+    "featured": false,
+    "en": {
+      "title": "TRAE on Campus @ Nantong University"
+    }
   },
   {
     "img": "/images/activities/trae/2.jpg",
     "title": "TRAE on Campus @南通大学",
     "date": "2026.5.16",
-    "featured": false
+    "featured": false,
+    "en": {
+      "title": "TRAE on Campus @ Nantong University"
+    }
   },
   {
     "img": "/images/activities/trae/3.jpg",
     "title": "TRAE on Campus @南通大学",
     "date": "2026.5.16",
-    "featured": false
+    "featured": false,
+    "en": {
+      "title": "TRAE on Campus @ Nantong University"
+    }
   },
   {
     "img": "/images/activities/trae/4.jpg",
     "title": "TRAE on Campus @南通大学",
     "date": "2026.5.16",
-    "featured": false
+    "featured": false,
+    "en": {
+      "title": "TRAE on Campus @ Nantong University"
+    }
   }
 ]

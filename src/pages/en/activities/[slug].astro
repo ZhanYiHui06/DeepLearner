@@ -1,0 +1,10 @@
+---
+import ActivityPage from '../../../views/ActivityPage.astro';
+import data from '../../../data/activities.json';
+
+export function getStaticPaths() {
+  return data.map(item => ({ params: { slug: item.slug } }));
+}
+---
+
+<ActivityPage slug={Astro.params.slug} />

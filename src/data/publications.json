@@ -8,7 +8,12 @@
     "date": "2026.3",
     "image": "/images/publications/pub-1.jpg",
     "link": "",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "Research on Deep Learning-Based Image Semantic Segmentation Methods",
+      "author": "Zhan Yihui, Wang Jin",
+      "categoryLabel": "Paper"
+    }
   },
   {
     "id": "pub-2",
@@ -19,7 +24,12 @@
     "date": "2025.12",
     "image": "/images/publications/pub-2.jpg",
     "link": "",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "Smart Campus Assistant App",
+      "author": "Li Jincheng, Wu Ronghong",
+      "categoryLabel": "Software Copyright"
+    }
   },
   {
     "id": "pub-3",
@@ -30,7 +40,12 @@
     "date": "2025.10",
     "image": "/images/publications/pub-3.jpg",
     "link": "",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "A Transformer-Based Method for Text Sentiment Analysis",
+      "author": "Sun Yuxin, Mou Wensheng",
+      "categoryLabel": "Patent"
+    }
   },
   {
     "id": "pub-4",
@@ -41,7 +56,12 @@
     "date": "2025.6",
     "image": "/images/publications/pub-4.jpg",
     "link": "",
-    "featured": true
+    "featured": true,
+    "en": {
+      "title": "DeepLearner Named an Outstanding Student Club of the University",
+      "author": "All DeepLearner members",
+      "categoryLabel": "Other"
+    }
   },
   {
     "id": "pub-5",
@@ -52,7 +72,12 @@
     "date": "2025.8",
     "image": "/images/publications/pub-5.jpg",
     "link": "",
-    "featured": false
+    "featured": false,
+    "en": {
+      "title": "Optimizing Meta-Learning Algorithms for Few-Shot Learning",
+      "author": "Zhan Yihui",
+      "categoryLabel": "Paper"
+    }
   },
   {
     "id": "pub-6",
@@ -63,6 +88,11 @@
     "date": "2025.5",
     "image": "/images/publications/pub-6.jpg",
     "link": "",
-    "featured": false
+    "featured": false,
+    "en": {
+      "title": "RAG-Based Knowledge Base Q&A System",
+      "author": "Li Jincheng, Sun Yuxin",
+      "categoryLabel": "Software Copyright"
+    }
   }
 ]

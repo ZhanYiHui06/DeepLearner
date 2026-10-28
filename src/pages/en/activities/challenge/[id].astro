@@ -1,0 +1,10 @@
+---
+import ChallengeSessionPage from '../../../../views/ChallengeSessionPage.astro';
+import data from '../../../../data/challenge_archives.json';
+
+export function getStaticPaths() {
+  return data.map(item => ({ params: { id: item.id } }));
+}
+---
+
+<ChallengeSessionPage id={Astro.params.id} />

@@ -13,22 +13,83 @@
     "startDate": "2025-09-29",
     "endDate": "2025-10-28",
     "milestones": [
-      { "label": "赛题发布", "date": "2025-10-01" },
-      { "label": "组队截止", "date": "2025-10-08" },
-      { "label": "开发截止", "date": "2025-10-26" },
-      { "label": "Demo Day", "date": "2025-10-28" }
+      {
+        "label": "赛题发布",
+        "date": "2025-10-01"
+      },
+      {
+        "label": "组队截止",
+        "date": "2025-10-08"
+      },
+      {
+        "label": "开发截止",
+        "date": "2025-10-26"
+      },
+      {
+        "label": "Demo Day",
+        "date": "2025-10-28"
+      }
     ],
     "topics": [
       {
         "title": "基于大模型的智能客服系统",
         "desc": "利用大语言模型构建面向特定场景的智能客服，要求能够理解用户意图并给出准确回复。",
-        "tags": ["NLP", "大模型", "RAG"]
+        "tags": [
+          "NLP",
+          "大模型",
+          "RAG"
+        ]
       },
       {
         "title": "校园场景下的图像识别应用",
         "desc": "针对校园生活中的实际需求，设计并实现一个图像识别解决方案。",
-        "tags": ["CV", "深度学习", "部署"]
+        "tags": [
+          "CV",
+          "深度学习",
+          "部署"
+        ]
       }
-    ]
+    ],
+    "en": {
+      "title": "The 1st DeepLearner Challenge",
+      "milestones": [
+        {
+          "label": "Topics released",
+          "date": "2025-10-01"
+        },
+        {
+          "label": "Team registration closes",
+          "date": "2025-10-08"
+        },
+        {
+          "label": "Development deadline",
+          "date": "2025-10-26"
+        },
+        {
+          "label": "Demo Day",
+          "date": "2025-10-28"
+        }
+      ],
+      "topics": [
+        {
+          "title": "LLM-Powered Intelligent Customer Service System",
+          "desc": "Use large language models to build an intelligent customer service system for a specific scenario that understands user intent and responds accurately.",
+          "tags": [
+            "NLP",
+            "LLM",
+            "RAG"
+          ]
+        },
+        {
+          "title": "Image Recognition for Campus Life",
+          "desc": "Design and implement an image recognition solution that addresses real needs in everyday campus life.",
+          "tags": [
+            "CV",
+            "Deep Learning",
+            "Deployment"
+          ]
+        }
+      ]
+    }
   }
 ]
