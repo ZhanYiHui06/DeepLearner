@@ -101,10 +101,10 @@ const zh = {
 };
 
 const en: typeof zh = {
-  'site.title': 'DeepLearner AI Learning Society',
+  'site.title': 'DeepLearner Club',
   'site.description': 'DeepLearner is the one and only, and the most influential, AI learning community at Nantong University.',
-  'site.name': 'AI Learning Society',
-  'site.fullName': 'DeepLearner AI Learning Society, Nantong University',
+  'site.name': 'Club',
+  'site.fullName': 'DeepLearner Club, Nantong University',
   'slogan.main': 'Unstoppable. Always Forward.',
   'slogan.sub': '永不停止前进的步伐',
 
